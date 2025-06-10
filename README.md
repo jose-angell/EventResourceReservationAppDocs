@@ -128,7 +128,7 @@ Docusaurus provee un script de despliegue para generar el build y subirlo a la r
 
 Ejecuta:
 ```
-npm run deploy
+ $env:GIT_USER = "jose-angell"; npm run deploy
 ```
 
 El comando hará lo siguiente:

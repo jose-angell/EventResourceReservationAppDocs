@@ -2,46 +2,64 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Introducción
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Este documento describe el análisis de requisitos y los flujos de usuario para el desarrollo de una aplicación de reservas de eventos.  
 
-## Getting Started
+**Objetivo:** Validar y definir el alcance para construir un MVP en el que el Administrador gestione los recursos y reservas, con la posibilidad de evolucionar hacia una solución multi-tenant en el futuro.
 
-Get started by **creating a new site**.
+## Objetivos del Proyecto
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+- Desarrollar una aplicación web para reservar recursos destinados a eventos (mesas, sillas, iluminación, salones, etc.).
+- Permitir que un único administrador gestione los recursos y las reservas.
+- Sentar las bases para una futura extensión en la que proveedores externos puedan gestionar sus propios recursos.
 
-### What you'll need
+## Alcance del Proyecto
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+**Funcionalidades Incluidas:**
+- Registro e inicio de sesión para usuarios (cliente y administrador).
+- Consulta y visualización de disponibilidad de recursos.
+- Creación, modificación y cancelación de reservas.
+- Gestión del inventario de recursos por parte del administrador.
+- Procesamiento de pagos y confirmación de reservas (fase posterior o prototipo básico).
 
-## Generate a new site
+**Exclusiones (Por el momento):**
+- Gestión de múltiples proveedores externos.
+- Integración avanzada con pasarelas de pago (puede simplificarse en el MVP).
 
-Generate a new Docusaurus site using the **classic template**.
+## Stakeholders y Roles
 
-The classic template will automatically be added to your project after you run the command:
+- **Administrador:**  
+  - Rol principal encargado de gestionar los recursos, aprobar reservas y actualizar la disponibilidad.
+- **Cliente:**  
+  - Usuario final que consulta la disponibilidad y solicita reservas.
+- **Futuro Proveedor (Opcional para fase evolutiva):**  
+  - Rol que en versiones futuras permitirá a terceros gestionar su propio catálogo de recursos.
 
-```bash
-npm init docusaurus@latest my-website classic
-```
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+## Requisitos Funcionales
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+- **Autenticación y Autorización:**
+  - Registro de usuarios.
+  - Inicio de sesión seguro.
+- **Gestión de Recursos:**
+  - CRUD para recursos (mesas, sillas, salones, etc.).
+  - Visualización del estado (disponible, reservado).
+- **Gestión de Reservas:**
+  - Creación de reservas: Selección de fecha, hora y recursos.
+  - Modificación y cancelación de reservas.
+  - Notificaciones de confirmación o cancelación.
+- **Dashboard Administrativo:**
+  - Visualización de reservas y recursos.
+  - Gestión de incidencias y actualización de disponibilidad.
 
-## Start your site
+## Requisitos No Funcionales
 
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+- **Usabilidad:**  
+  - Interfaz intuitiva con tiempos de respuesta rápidos.
+- **Seguridad:**  
+  - Implementación de protocolos para proteger datos personales (por ejemplo, JWT para la autenticación).
+- **Escalabilidad:**  
+  - Arquitectura modular que permita la adición de nuevos roles (proveedores) en el futuro.
+- **Compatibilidad:**  
+  - Accesible desde diferentes dispositivos (responsive design).
