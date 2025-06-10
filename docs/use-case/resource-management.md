@@ -1,0 +1,27 @@
+---
+sidebar_position: 2
+title: Gestión de Recursos
+---
+
+
+### Caso de Uso: "Gestión de Recursos"
+
+**Actor:** Administrador  
+**Flujo Básico:**
+1. El administrador inicia sesión.
+2. Accede al dashboard de gestión.
+3. Agrega, actualiza o elimina un recurso.
+4. El sistema actualiza la disponibilidad en tiempo real.
+
+``` mermaid
+sequenceDiagram
+  autonumber
+  Administrador->>John: Hello John, how are you?
+  loop Healthcheck
+      John->>John: Fight against hypochondria
+  end
+  Note left of John: Rational thoughts!
+  John-->>Alice: Great!
+  John->>Bob: How about you?
+  Bob-->>John: Jolly good!
+```

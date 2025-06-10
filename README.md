@@ -145,3 +145,20 @@ https://tu-usuario.github.io/mi-documentacion/
 ```
 
 Espera unos minutos para que GitHub Pages actualice el contenido.
+
+
+### Agregar Diagragas
+1. Instalar el plugin:
+```
+npm install --save @docusaurus/theme-mermaid
+```
+
+2. Habilitar Mermaid en la configuración En tu archivo ```docusaurus.config.js```, agrega:
+
+```
+export default {
+  markdown: { mermaid: true },
+  themes: ['@docusaurus/theme-mermaid'],
+};
+
+```
