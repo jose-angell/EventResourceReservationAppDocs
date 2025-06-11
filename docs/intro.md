@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Introducción
 
-Este documento describe el análisis de requisitos y los flujos de usuario para el desarrollo de una aplicación de reservas de eventos.  
+Este documento describe el análisis de requisitos y los flujos de usuario para el desarrollo de una aplicación de reservas para eventos.  
 
 **Objetivo:** Validar y definir el alcance para construir un MVP en el que el Administrador gestione los recursos y reservas, con la posibilidad de evolucionar hacia una solución multi-tenant en el futuro.
 
