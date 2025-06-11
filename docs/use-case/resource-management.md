@@ -15,13 +15,11 @@ title: Gestión de Recursos
 
 ``` mermaid
 sequenceDiagram
-  autonumber
-  Administrador->>John: Hello John, how are you?
-  loop Healthcheck
-      John->>John: Fight against hypochondria
-  end
-  Note left of John: Rational thoughts!
-  John-->>Alice: Great!
-  John->>Bob: How about you?
-  Bob-->>John: Jolly good!
+    participant Administrador
+    participant Sistema
+
+    Administrador->>Sistema: Inicia sesión
+    Sistema-->>Administrador: Confirma autenticación
+
+    Administrador->>Sistema: Accede al dashboard
 ```

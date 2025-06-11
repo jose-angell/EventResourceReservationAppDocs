@@ -19,20 +19,23 @@ title: Realizar una reserva
 
 
 ```mermaid
-graph LR
-  A[Start] --> B{Error?};
-  B -->|Yes| C[Hmm...];
-  C --> D[Debug];
-  D --> B;
-  B ---->|No| E[Yay!];
+sequenceDiagram
+    participant Cliente
+    participant Sistema
+    participant Administrador
+
+    Cliente->>Sistema: Inicia sesión
+    Sistema-->>Cliente: Confirma autenticación
+
+    Cliente->>Sistema: Consulta disponibilidad de recursos
+    Sistema-->>Cliente: Muestra recursos disponibles
+
+    Cliente->>Sistema: Selecciona recursos y añade detalles
+    Cliente->>Sistema: Envía solicitud de reserva
+    Sistema->>Administrador: Notifica solicitud de reserva
+
+    Administrador->>Sistema: Revisa y aprueba/rechaza reserva
+    Sistema-->>Cliente: Envía confirmación o rechazo
+
 ```
 
-
-```mermaid
-graph LR;
-    A--> B & C & D
-    B--> A & E
-    C--> A & E
-    D--> A & E
-    E--> B & C & D
-```

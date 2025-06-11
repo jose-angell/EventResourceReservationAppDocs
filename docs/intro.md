@@ -63,3 +63,17 @@ Este documento describe el análisis de requisitos y los flujos de usuario para 
   - Arquitectura modular que permita la adición de nuevos roles (proveedores) en el futuro.
 - **Compatibilidad:**  
   - Accesible desde diferentes dispositivos (responsive design).
+
+## 10. Roadmap y Fases del Proyecto
+
+**Fase 1:**  
+- Análisis y documentación de requisitos y flujos de usuario (esta fase).  
+- Definición del modelo de dominio y estructura inicial.
+
+**Fase 2:**  
+- Desarrollo del MVP (Aplicación con rol único del Administrador).  
+- Implementación del backend (ASP.NET Core y PostgreSQL) y del frontend (React).
+
+**Fase 3:**  
+- Refactorización y modularización para escalabilidad.  
+- Preparación para la futura integración del rol de Proveedor.

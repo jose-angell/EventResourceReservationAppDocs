@@ -15,3 +15,22 @@ title: Cancela una reserva
 6. Se envía una notificación de confirmación cliente.
 
 ### Diagramas
+
+```mermaid
+sequenceDiagram
+    participant Cliente
+    participant Sistema
+    participant Administrador
+
+    Cliente->>Sistema: Inicia sesión
+    Sistema-->>Cliente: Confirma autenticación
+
+    Cliente->>Sistema: Consulta reservas
+    Sistema-->>Cliente: Muestra reservas disponibles
+
+    Cliente->>Sistema: Selecciona reserva a cancelar
+    Cliente->>Sistema: Valida datos y confirma cancelación
+    Sistema->>Administrador: Notifica cancelación
+    Sistema-->>Cliente: Envía confirmación de cancelación
+
+```
