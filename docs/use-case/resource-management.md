@@ -9,6 +9,11 @@ title: Gestión de Recursos
 ## Descripción General
 Este caso de uso describe la capacidad del administrador para gestionar los recursos disponibles en el sistema. Incluye la creación, modificación y eliminación de recursos.
 
+## Actores
+- **Cliente:** Usuario que realiza reservas de recursos disponibles en el sistema.
+- **Administrador:** Responsable de gestionar las solicitudes de reserva y controlar la disponibilidad.
+
+---
 
 **Actor:** Administrador  
 
