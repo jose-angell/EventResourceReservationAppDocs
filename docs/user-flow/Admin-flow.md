@@ -4,10 +4,10 @@ title: flujo creacion de Reservas
 ---
 
 
-1. consutlar recursos
-2. crear un recurso
-3. editar un recurso
-4. eliminar un recurso
+
+1. Consultar todos los administradores (secundarios)
+2. consultar detalle del perfil de administrador
+3. modificar estatus de administrador
 
 ### Flujo de Usuario: "Flujo de Reservas"
 

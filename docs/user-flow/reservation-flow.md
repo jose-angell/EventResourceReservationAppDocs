@@ -11,13 +11,39 @@ title: flujo de Reservas
 Este flujo describe el proceso para que un cliente realice la consulta de todas las reservas realizadas en el sistema.
 
 1. **Visualización de la Página Principal:**  
-   - 
+   - La pagina principal se muestra y el menu donde solo se muestra la opcion de reservas solo si la cuenta esta activa
+   - Al seleccionar la opcion de reserva se muestra la pantalla de reservas.
+2. **Visualizacion de la pagina de reservas:**
+   - inicalmente se muestra todas las reservas realizadas, inicando por la ultima.
+   - El usuario podra filtrar las reservas por estado, fecha, tipo de recurso.
+3. **Acciones para cada recurso:**
+   - Cada reserva mostrar las siguientes acciones permitidas para el usuario
+      - Editar: al seleccionarlo se mostrara el formulario con los datos que se permiten editar.
+      - Eliminar: Al seleccionarlo, este mostrara un modal para confirmar la accion de eliminacion.
+      - Detalle: Se redirigira al usuario a la pangina con los detalles de la reseva.
+4. **Regresa a la pantalla principal:**
+   - El cliente regresa a la pagina principal.
+
+
 
 ### Flujo de Usuario: "Cosultar el detalle de Reserva"
 
 **Descripción del Flujo:**
 
-Este flujo describe el proceso para que un cliente realice una al detalle de una reserva en especifico en el sistema.
+Este flujo describe el proceso para que un cliente realice una consulta al detalle de una reserva en especifico en el sistema.
+
+1. **Visualizacion de la pagina de reservas:**
+   - inicalmente se muestra todas las reservas realizadas, inicando por la ultima.
+   - El usuario podra filtrar las reservas por estado, fecha, tipo de recurso.
+2. **Seleccionar una reserva:**
+   - Al usar la accion de `detalle` se mostrara la pagina de detalle para la reserva seleccionada.
+3. **Mostrar informacion:**
+   - Se mostrar toda la informacion relacionada con la reserva, incluyendo recursos, catidad, costos, imagenes, estado, etc.
+   - Tambien se permitira pasar a la pantalla de edicion utilizando un boton.
+3. **Regresa a la pantalla de reservas:**
+   - Al terminar de revisar los detalles de la reserva, se puede regresar a la lista de reservas.
+
+
 
 ### Flujo de Usuario: "Creacion de Reservas"
 
@@ -85,22 +111,93 @@ graph TD;
 ```
 
 
+### Flujo de Usuario: "Editar una Reserva"
+
+**Descripción del Flujo:**
+
+Este flujo describe el proceso para que un cliente realice una edicion de la reserva en el sistema.
+
+1. **Acceso a la pantalla de Edicion:**
+   - Existe dos forma de acceder a la edicion de una reserva
+      - Seleccionando la accion en la pantalla del listado de reserva.
+      - Desde el detalle de la reserva.
+2. **Visualizacion del formulario de edicion:**
+   - Dentro de cada campo del formulario se mostrara la informacion guardada.
+3. **Confirmar o cancelar Edicion:** 
+   - En caso de editar algun campo del formaulario se puede guardar los cambio en la base de datos.
+   - Si se cancela la edicion solo se regresa a la pantalla de origen, ya sea la lista de reservas o la pantalla de detalle
+4. **Notificación de Resultado:**  
+   - El cliente recibe una notificación confirmando que la reserva ha sido editada.
+   - El administrador recibe una notificacion sobre el cambio de la reserva.
+5. **Regresa a la pantalla de origen:**
+   - El cliente regresa a la pagina de origen, que podria se la lista de reservas o la pantalla de detalle.
 
 
 
-1. consultar todas las reservas
-2. consultar destalle de reserva
-3. crear una reserva
-4. editar una reserva
-5. cancelar una resarva
-6. pagar una reserva
-7. modificar estatus de reserva
+### Flujo de Usuario: "Cancelar una Reserva"
 
-1. consutlar recursos
-2. crear un recurso
-3. editar un recurso
-4. eliminar un recurso
+**Descripción del Flujo:**
 
-1. Consultar todos los administradores (secundarios)
-2. consultar detalle del perfil de administrador
-3. modificar estatus de administrador
+Este flujo describe el proceso para que un cliente realice una cancelacion de una reserva en especifico en el sistema.
+
+1. **Visualizacion de la pagina de reservas:**
+   - Inicalmente se muestra todas las reservas realizadas, inicando por la ultima.
+2. **Busqueda de la reserva:**
+   - El cliente buscala reserva que quiere eliminar.
+   - Puede utilizar los filtro o buscarla manualmente.
+3. **Cancelacion de reserva**
+   - El reserva excite una accion para cancelar la reserva
+4. **Mostrar mensaje de confirmacion**
+   - Se mostrar un mensaje para que el usuario confirme si desea cancelar la reserva
+      - Si confirma la cancelacion esta se reflejara en la base de datos.
+      - Si cancela la accion el mensaje solo se cerrara y no se guardara ningun cambio.
+5. **Notificacion de cambios**
+   - El sistema notifica al administrador de la cancelacion de la reserva.
+   - Tambien se liberaran los recursos.
+6. **Ocultar mensaje**
+   - Se cerrar el mensaje y se mostrar de nuevo la lista de reservas
+
+### Flujo de Usuario: "Pagar una Reserva"
+
+**Descripción del Flujo:**
+
+Este flujo describe el proceso para que un cliente realice el pago de una reserva en especifico en el sistema.
+
+1. **Visualizacion de la pagina de reservas:**
+   - Inicalmente se muestra todas las reservas realizadas, inicando por la ultima.
+2. **Busqueda de la reserva:**
+   - El cliente buscala reserva que quiere eliminar.
+   - Puede utilizar los filtro o buscarla manualmente.
+3. **Seleccionar una reserva:**
+   - Al usar la accion de `detalle` se mostrara la pagina de detalle para la reserva seleccionada.
+4. **Seleccionar la accion de pago**
+   - Dentro de la pantalla de detalle se muestra la accion de pagar.
+      - Se llevara al usuario a la pasarela de pago.
+5. **Notificación de Resultado:**  
+   - El cliente recibe una notificación confirmando que proceso de pago ha terminado, incluyendo los posibles estados de aprobación o rechazo.
+   - Se notificara el pago al administrador.
+6. **Regresa a la pantalla principal:**
+   - El cliente regresa a la pagina principal.
+
+
+### Flujo de Usuario: "Modificar estado de la Reserva"
+
+**Descripción del Flujo:**
+
+Este flujo describe el proceso para que un administrador realice el cambio de estado de una reserva en especifico en el sistema.
+
+1. **Visualizacion de la pagina de reservas:**
+   - inicalmente se muestra todas las reservas realizadas por todos los clientes, inicando por la ultima.
+   - El usuario podra filtrar las reservas por estado, fecha, tipo de recurso.
+2. **Seleccionar una reserva:**
+   - Al usar la accion de `detalle` se mostrara la pagina de detalle para la reserva seleccionada.
+3. **Mostrar informacion:**
+   - Se mostrar toda la informacion relacionada con la reserva, para que el administrador evalue la reserva.
+4. **Aprobar o rechazar reserva**
+   - El administrador tiene la opcion de rechazar o aprobar la reserva.
+      - En caso de aprorbar la reserva puede agregar un comentario o observacion.
+      - Si la reserva es rechazada se puede agregar el motivo del rechazo.
+5. **Notificación de Resultado:**  
+   - El cliente recibe una notificación confirmando el estado de la reserva.
+6. **Regresa a la pantalla principal:**
+   - El administrador regresa a la pagina de reservas.
