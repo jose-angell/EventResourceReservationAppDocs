@@ -49,6 +49,8 @@ Este documento describe el análisis de requisitos y los flujos de usuario para 
   - Creación de reservas: Selección de fecha, hora y recursos.
   - Modificación y cancelación de reservas.
   - Notificaciones de confirmación o cancelación.
+- **Procesamiento de Pagos:**
+  -Integración con una pasarela de pago y la generación de confirmaciones.
 - **Dashboard Administrativo:**
   - Visualización de reservas y recursos.
   - Gestión de incidencias y actualización de disponibilidad.
@@ -64,7 +66,7 @@ Este documento describe el análisis de requisitos y los flujos de usuario para 
 - **Compatibilidad:**  
   - Accesible desde diferentes dispositivos (responsive design).
 
-## 10. Roadmap y Fases del Proyecto
+## Roadmap y Fases del Proyecto
 
 **Fase 1:**  
 - Análisis y documentación de requisitos y flujos de usuario (esta fase).  
@@ -77,3 +79,29 @@ Este documento describe el análisis de requisitos y los flujos de usuario para 
 **Fase 3:**  
 - Refactorización y modularización para escalabilidad.  
 - Preparación para la futura integración del rol de Proveedor.
+
+
+```mermaid
+graph TD;
+    A[Inicio] --> B[Cliente accede a la aplicación]
+    B -->|¿Ha iniciado sesión?| C{Sí}
+    B -->|No| D[Autenticación requerida]
+    D --> B
+
+    C --> E[Visualiza la página principal]
+    E --> F[Busca recursos o consulta inventario]
+    F --> G[Selecciona fecha, hora y tipo de recurso]
+
+    G -->|¿Hay disponibilidad?| H{Sí}
+    G -->|No| I[Muestra mensaje de error o sugiere otra fecha]
+    I --> F
+
+    H --> J[Selecciona recurso y ajusta parámetros]
+    J --> K[Confirma la reserva]
+    K --> L[Envía solicitud de reserva]
+    L --> M[Estado: Pendiente, espera aprobación]
+
+    M --> N[Notificación de registro de reserva]
+    N --> O[Fin]
+
+```
