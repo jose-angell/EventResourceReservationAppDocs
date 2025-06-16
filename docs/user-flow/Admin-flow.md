@@ -19,6 +19,21 @@ Este flujo describe el proceso para que el administrador principal consulte a to
 3. **Acciones disponibles**
    - En la lista de administradoers cada uno permite al administrador acceder a los detalles de la misma.
 
+**Diagrama**
+```mermaid
+graph TD;
+    A[Inicio] --> B[Administrador accede a la aplicación]
+    B --> C{¿Sesión activa?}
+    C -->|No| D[Redirige a inicio de sesión]
+    D --> B
+    C -->|Sí| E[Muestra menú con opción de administración]
+    E --> F[Selecciona opción: Panel de administración]
+    F --> G[Muestra dashboard administrativo]
+    G --> H[Visualiza lista de administradores secundarios]
+    H --> I[Selecciona administrador para ver detalles]
+    I --> J[Muestra información detallada del administrador]
+    J --> K[Fin]
+```
 ---
 ## Consultar el detalle del administrador secundario
 
@@ -40,6 +55,22 @@ Este flujo describe el proceso para que el administrador principal consulte los 
 5. **Regresa al dashboard**
    - Al terminar de revisar los detalles del administrador se puede regresar al dashboard.
 
+**Diagrama**
+```mermaid
+graph TD;
+    A[Inicio] --> B[Administrador accede a la aplicación]
+    B --> C{¿Sesión activa?}
+    C -->|No| D[Redirige a inicio de sesión]
+    D --> B
+    C -->|Sí| E[Muestra menú con opción de administración]
+    E --> F[Selecciona opción: Panel de administración]
+    F --> G[Muestra dashboard con lista de administradores secundarios]
+    G --> H[Selecciona acción: Ver detalle]
+    H --> I[Muestra información del administrador seleccionado]
+    I --> M[Regresa al dashboard]
+    M --> N[Fin]
+
+```
 ---
 
 ## modificar el estado del administrador
@@ -65,3 +96,24 @@ Este flujo describe el proceso para que el administrador principal midifique el 
       - Si se escoge Inactivo el perfil no tendra acceso a la aplicacion y no podra inciar sesion.
 5. **Regresa al dashboard**
    - Al terminar de revisar los detalles del administrador se puede regresar al dashboard.
+
+**Diagrama**
+```mermaid
+graph TD;
+    A[Inicio] --> B[Administrador accede a la aplicación]
+    B --> C{¿Sesión activa?}
+    C -->|No| D[Redirige a inicio de sesión]
+    D --> B
+    C -->|Sí| E[Muestra menú con opción de administración]
+    E --> F[Selecciona opción: Panel de administración]
+    F --> G[Muestra dashboard con lista de administradores secundarios]
+    G --> H[Selecciona acción: Ver detalle]
+    H --> I[Muestra información del administrador seleccionado]
+    I --> J[Selecciona opción: Cambiar estado]
+    J --> K{¿Nuevo estado seleccionado?}
+    K -->|Activo| L[Actualiza estado a Activo]
+    K -->|Inactivo| M[Actualiza estado a Inactivo]
+    L --> N[Regresa al dashboard]
+    M --> N
+    N --> O[Fin]
+```

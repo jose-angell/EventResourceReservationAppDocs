@@ -12,7 +12,7 @@ title: Categoria de recurso
  - `UsuarioCreacionId` : `int` | Llave foranea para identificar al usuario al que le pertenece la ubicacion.
  - `FechaCreacion` : `DateTime` | Fecha de crecion de la ubicacion.
 
-
+## Diagrama
 ```mermaid
 erDiagram
     Category {
