@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 title: Recurso
 ---
 
@@ -7,7 +7,7 @@ title: Recurso
 
 Propiedades: 
 - `Id` : `int` | Identificador unico para cada recurso.
-- `TipoId` : `int` | Llave foranea para relacionar al recurso con el catologo de tipo de recruso (mesa, silla, etc.).
+- `CategoryId` : `int` | Llave foranea para relacionar al recurso con el catologo de tipo de recruso (mesa, silla, etc.).
 - `EstadoId` : `int` | Llave foranea para relacionar lo diferentes posibles estados del recurso  (Disponible, Bloqueado, Eliminado).
 - `Nombre` : `string` | Nombre o descripcion breve del recurso.
 - `Descripcion` : `string` | Descripcion del Recurso.
@@ -25,7 +25,7 @@ Propiedades:
 erDiagram
     Resource {
         int Id
-        int TipoId
+        int CategoryId
         int EstadoId
         string Nombre
         string Descripcion
