@@ -19,7 +19,7 @@ Este flujo describe el proceso para que el administrador principal consulte a to
 3. **Acciones disponibles**
    - En la lista de administradoers cada uno permite al administrador acceder a los detalles de la misma.
 
-
+---
 ## Consultar el detalle del administrador secundario
 
 **Descripción del Flujo:**
@@ -39,6 +39,8 @@ Este flujo describe el proceso para que el administrador principal consulte los 
    - Tambien se permitira cambiar el estado del administrador.
 5. **Regresa al dashboard**
    - Al terminar de revisar los detalles del administrador se puede regresar al dashboard.
+
+---
 
 ## modificar el estado del administrador
 

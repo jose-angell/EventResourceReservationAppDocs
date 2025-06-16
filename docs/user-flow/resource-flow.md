@@ -35,6 +35,8 @@ Existen dos formas de ver los recursos, la del administrador desde un panel admi
 3. **Selección de Recurso**  
    - El cliente puede acceder a los detalles de un recurso.
 
+---
+
 ## Consulta del detalle de un recurso
 
 **Descripción del Flujo:**
@@ -72,6 +74,7 @@ Existen dos formas de ver el detalle del recurso, la del administrador desde un 
    - Se muestra la pagina con todos los detalles relevantes para el cliente relacionados con este recurso.
 5. **Regresar a la pagina principal**
    - Al terminar de revisar el recurso el cliente puede regresar a la pagina principal para seguir buscando.
+---
 
 ## Crear un Recurso
 
@@ -96,6 +99,7 @@ Este flujo describe el proceso para que un administrador cree un recurso en el s
    - El usuario recibe una notificación confirmando que el recurso ha sido registrada, o si ocurrio algun error.
 6. **Regreso al panel principal**
    - Al finalizar la accion de creacion se regresa al dashboard
+---
 
 ## Editar un Recurso
 
@@ -121,6 +125,8 @@ Este flujo describe el proceso para que se edite un recurso en el sistema.
 6. **Regreso al panel principal**
    - Al finalizar la accion de creacion se regresa al dashboard
 
+---
+
 ## Eliminar un Recurso
 
 **Descripción del Flujo:**
@@ -133,12 +139,18 @@ Este flujo describe el proceso para que elimine un recurso en el sistema.
    - El adminitrador accede al panel administrativo con una vista practiva y resumida de los recursos
    - Visualiza la lista de recursos.
 3. **Eliminar un recurso**
-   - En la lista se encuentra la accion para eliminar un recuro
+   - En la lista se encuentra la accion para eliminar  o  bloquear un recuro
+   - La accion de bloqueo siempre esta presente.
+   - La accion de eliminacion solo se muestra si ese recurso no tiene ninguna reserva activa y pagada asociada.
 4. **Mostrar mensaje de confirmacion**
    - Se mostrar un mensaje para confirmar la accion en dos esenarios posibles.
       - Si el recurso tiene almenos una reserva activa y pagada, se bloqueara el recurso para que nadie mas pueda reservarlo.
       - Si no tiene ninguna reserva asociada se pedira confirmar la accion de eliminacion y se actualizara la base de datos
    - En caso de cancelar la accion el mensaje solo se cerrara y no se guardara ningun cambio.
+5. **Proceso de eliminacion**
+   - Existe dos formas dependiendo el historial de reservas del recurso
+      - Si se reservo y pago almenos una vez, el estatus del recurso se cambia a eliminada.
+      - Si nunca se reservo y pago almenos una vez, se eliminara fisicamente de la base de datos.
 5. **Notificacion de cambios**
    - El sistema notifica de la cancelacion de la reserva a todos los clientes donde los estatus fueran pendiente o autorizada .
    - Tambien se mostrara un mesaje de confimacion de accion al administrador.

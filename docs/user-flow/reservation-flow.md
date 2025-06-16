@@ -34,7 +34,7 @@ Este flujo describe el proceso para consultar las reservas. Existen dos rutas pa
       - Eliminar: Al seleccionarlo, este mostrara un modal para confirmar la accion de eliminacion.
       - Detalle: Se redirigira al usuario a la pangina con los detalles de la reseva.
 
-
+---
 ## Cosultar el detalle de Reserva
 
 **Descripción del Flujo**
@@ -72,7 +72,7 @@ Este flujo describe el proceso para realizar la consulta al detalle de una reser
 5. **Regresa al dashboard**
    - Al terminar de revisar los detalles de la reserva, se puede regresar a la lista de reservas.
 
-
+---
 
 ## Creacion de Reservas
 
@@ -138,7 +138,7 @@ graph TD;
     Q --> R[Regresa a la pantalla principal]
     R --> B
 ```
-
+---
 ## Editar una Reserva
 
 **Descripción del Flujo:**
@@ -161,7 +161,7 @@ Este flujo describe el proceso para que un cliente realice una edicion de la res
    - El cliente regresa a la pagina de origen, que podria se la lista de reservas o la pantalla de detalle.
 
 
-
+---
 ## Cancelar una Reserva
 
 **Descripción del Flujo:**
@@ -185,6 +185,7 @@ Este flujo describe el proceso para que un cliente realice una cancelacion de un
 6. **Ocultar mensaje**
    - Se cerrar el mensaje y se mostrar de nuevo la lista de reservas
 
+---
 ## Pagar una Reserva
 
 **Descripción del Flujo:**
@@ -207,7 +208,7 @@ Este flujo describe el proceso para que un cliente realice el pago de una reserv
 6. **Regresa a la pantalla principal**
    - El cliente regresa a la pagina principal.
 
-
+---
 ## Modificar estado de la Reserva
 
 **Descripción del Flujo:**

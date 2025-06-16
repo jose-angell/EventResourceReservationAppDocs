@@ -4,12 +4,12 @@ title: Gestión de Recursos
 ---
 
 
-### Caso de Uso: "Gestión de Recursos"
+### Gestión de Recursos
 
-## Descripción General
+**Descripción General**
 Este caso de uso describe la capacidad del administrador para gestionar los recursos disponibles en el sistema. Incluye la creación, modificación y eliminación de recursos.
 
-## Actores
+**Actores**
 - **Cliente:** Usuario que realiza reservas de recursos disponibles en el sistema.
 - **Administrador:** Responsable de gestionar las solicitudes de reserva y controlar la disponibilidad.
 
@@ -42,7 +42,7 @@ sequenceDiagram
 
 ---
 
-## Subcaso de Uso: Agregar un Recurso
+## Agregar un Recurso
 Para facilitar el flujo de aprobacion de reservas se configurara los recorsos para poder indentificar cuando la autorizacion de la reserva de dicho recurso es 
 automatica o manual (donde el administrador debe autorizar).
 
@@ -72,7 +72,7 @@ sequenceDiagram
 ```
 ---
 
-## Subcaso de Uso: Modificar un Recurso
+## Modificar un Recurso
 **Flujo Básico**
 1. El administrador accede al listado de recursos.
 2. Selecciona el recurso que desea modificar.
@@ -102,7 +102,7 @@ sequenceDiagram
 ```
 --- 
 
-## Subcaso de Uso: Eliminar un Recurso
+## Eliminar un Recurso
 
 **Flujo Básico**
 1. El administrador accede al listado de recursos.
