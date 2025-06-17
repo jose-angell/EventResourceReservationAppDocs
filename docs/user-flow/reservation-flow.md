@@ -152,7 +152,7 @@ graph TD;
 
 ## Creacion de Reservas
 
-### Reservar un unico recrurso
+### Crear una reserva individual
 **Descripción del Flujo**
 
 Este flujo describe el proceso para que un cliente realice una reserva en el sistema de un unico recurso.
@@ -217,11 +217,84 @@ graph TD;
 
 ```
 
-### Reservar un grupo de recrursos
-**Descripción del Flujo**
+### Crear una reserva desde el carrito de compras
 
-Este flujo describe el proceso para que un cliente realice una reserva en el sistema de un grupo recursos.
+**Descripción del Flujo:**
 
+Este flujo describe el proceso para que un cliente realice una reserva de los recursos, incluyendo el acceso al carrtio y la edicion del mismo.
+
+
+1. **Visualización de la Página Principal**  
+   - La página se muestra sin necesidad de iniciar sesión.
+   - La pantalla muestra una carga incial de todos los recursos disponibles para ese dia.
+   - El cliente ve la opción de buscar el recurso en el inventario disponible.
+2. **Búsqueda y Consulta de Disponibilidad**  
+   - El cliente selecciona la fecha (obligatorio), la hora (opcional) y el tipo de recurso (opcional).
+     - Si hay recursos disponibles, continúa el flujo.
+     - Si no, se muestra un mensaje que invita a elegir otra fecha o recurso.
+3. **Selección del Recurso y Configuración de la Reserva**  
+   - El cliente elige el recurso específico y ajusta parámetros como la cantidad o la ubicación.
+4. **Accion de Agreega a carrito**  
+   - El cliente revisa la información y confirma los datos ingresados.
+     - Si el cliente tiene sesión activa, continúa el flujo.
+     - Si no tiene sesión, se le solicita quen iicie sesión o se registre (se guardan los datos de la configuracion de la reserva temporalmente).
+5. **Envio a carrito** 
+   - Despues de configurar las especificaciones del recurso a reservar se puede agregar al carrito, para que se reserve en grupo
+6. **Notificación de Resultado**  
+   - El cliente recibe una notificación confirmando que la reserva ha sido agregada al carrito.
+7. **Regresa a la pantalla principal**
+   - El cliente regresa a la pagina principal.
+8. **Acceso al carrito**
+   -El carrito se muestra en la pagina de inicio, pero solo se puede acceder si la sesion esta activa
+9. **Mostrar Carrito** 
+   - Al entrar en la pagina de carrito de compra se mostrar la lista de recursos guardados y las cantidades (si un recurso ya no tiene la cantidad indicada en el carrito disponible se mostrar un mensaje al susario para que lo ajuste)
+   - cada uno tendra la opcion para eliminar o cambiar la cantidad, asi como agregar algun comentario
+10. **Configuración de la Reserva**  
+   - El cliente elige el recurso específico y ajusta parámetros como la cantidad o la ubicación.
+11. **Validacion de campos y envio de reserva**
+   - Se validan los campos requeridos y la disponibilidad de los recuros al momento de enviar la solicitud de reserva
+12. **Notificación de Resultado**  
+   - El cliente recibe una notificación confirmando que la reserva ha sido registrada, incluyendo los posibles estados de pendiente, aprobación o rechazo.
+13. **Baciar el carrito**
+   - Al crear la reserva con los recursos del carrito, este eliminina todos los recurso asociados al carrito del cliente.
+14. **Regresa a la pantalla principal**
+   - El cliente regresa a la pagina principal.
+
+**Diagrama**
+```mermaid
+graph TD;
+    A[Inicio] --> B[Visualización de la Página Principal]
+    B --> C[Muestra recursos disponibles para el día]
+    C --> D[Cliente busca en el inventario]
+    D --> E[Selecciona fecha, hora y tipo de recurso]
+    E --> F{¿Hay recursos disponibles?}
+    F -->|No| G[Muestra mensaje: elige otra fecha o recurso]
+    G --> D
+    F -->|Sí| H[Selecciona recurso y ajusta parámetros]
+    H --> I[Confirma configuración del recurso]
+    I --> J{¿Sesión activa?}
+    J -->|No| K[Solicita inicio de sesión o registro]
+    K --> L[Guarda configuración temporalmente]
+    L --> M[Agrega recurso al carrito]
+    J -->|Sí| M
+    M --> N[Notifica al cliente que se agregó al carrito]
+    N --> O[Regresa a la página principal]
+    O --> P[Cliente accede al carrito]
+    P --> Q[Muestra lista de recursos en el carrito]
+    Q --> R{¿Cantidad disponible?}
+    R -->|No| S[Muestra mensaje para ajustar cantidad]
+    S --> Q
+    R -->|Sí| T[Cliente edita cantidad o elimina recurso]
+    T --> U[Cliente confirma configuración final]
+    U --> V[Valida campos y disponibilidad]
+    V --> W[Envía solicitud de reserva]
+    W --> X[Notifica al cliente el resultado]
+    X --> Y[Vacía el carrito del cliente]
+    Y --> Z[Regresa a la página principal]
+    Z --> AA[Fin]
+
+
+```
 ---
 ## Editar una Reserva
 
