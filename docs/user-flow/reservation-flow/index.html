@@ -5,8 +5,8 @@
 <meta name="generator" content="Docusaurus v3.8.1">
 <title data-rh="true">Flujo de Reservas | EventReservationAppDocs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://jose-angell.github.io/EventReservationAppDocs/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://jose-angell.github.io/EventReservationAppDocs/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://jose-angell.github.io/EventReservationAppDocs/docs/user-flow/reservation-flow"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Flujo de Reservas | EventReservationAppDocs"><meta data-rh="true" name="description" content="Consulta de todas las Reservas"><meta data-rh="true" property="og:description" content="Consulta de todas las Reservas"><link data-rh="true" rel="icon" href="/EventReservationAppDocs/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://jose-angell.github.io/EventReservationAppDocs/docs/user-flow/reservation-flow"><link data-rh="true" rel="alternate" href="https://jose-angell.github.io/EventReservationAppDocs/docs/user-flow/reservation-flow" hreflang="en"><link data-rh="true" rel="alternate" href="https://jose-angell.github.io/EventReservationAppDocs/docs/user-flow/reservation-flow" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Flujo de usuario","item":"https://jose-angell.github.io/EventReservationAppDocs/docs/category/flujo-de-usuario"},{"@type":"ListItem","position":2,"name":"Flujo de Reservas","item":"https://jose-angell.github.io/EventReservationAppDocs/docs/user-flow/reservation-flow"}]}</script><link rel="alternate" type="application/rss+xml" href="/EventReservationAppDocs/blog/rss.xml" title="EventReservationAppDocs RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/EventReservationAppDocs/blog/atom.xml" title="EventReservationAppDocs Atom Feed"><link rel="stylesheet" href="/EventReservationAppDocs/assets/css/styles.41043d56.css">
-<script src="/EventReservationAppDocs/assets/js/runtime~main.5e809248.js" defer="defer"></script>
-<script src="/EventReservationAppDocs/assets/js/main.41988a7b.js" defer="defer"></script>
+<script src="/EventReservationAppDocs/assets/js/runtime~main.de3a31b0.js" defer="defer"></script>
+<script src="/EventReservationAppDocs/assets/js/main.c4ca4892.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
@@ -137,7 +137,7 @@
 <!-- -->
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="creacion-de-reservas">Creacion de Reservas<a href="#creacion-de-reservas" class="hash-link" aria-label="Direct link to Creacion de Reservas" title="Direct link to Creacion de Reservas">​</a></h2>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="reservar-un-unico-recrurso">Reservar un unico recrurso<a href="#reservar-un-unico-recrurso" class="hash-link" aria-label="Direct link to Reservar un unico recrurso" title="Direct link to Reservar un unico recrurso">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="crear-una-reserva-individual">Crear una reserva individual<a href="#crear-una-reserva-individual" class="hash-link" aria-label="Direct link to Crear una reserva individual" title="Direct link to Crear una reserva individual">​</a></h3>
 <p><strong>Descripción del Flujo</strong></p>
 <p>Este flujo describe el proceso para que un cliente realice una reserva en el sistema de un unico recurso.</p>
 <ol>
@@ -202,9 +202,96 @@
 </li>
 </ol>
 <!-- -->
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="reservar-un-grupo-de-recrursos">Reservar un grupo de recrursos<a href="#reservar-un-grupo-de-recrursos" class="hash-link" aria-label="Direct link to Reservar un grupo de recrursos" title="Direct link to Reservar un grupo de recrursos">​</a></h3>
-<p><strong>Descripción del Flujo</strong></p>
-<p>Este flujo describe el proceso para que un cliente realice una reserva en el sistema de un grupo recursos.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="crear-una-reserva-desde-el-carrito-de-compras">Crear una reserva desde el carrito de compras<a href="#crear-una-reserva-desde-el-carrito-de-compras" class="hash-link" aria-label="Direct link to Crear una reserva desde el carrito de compras" title="Direct link to Crear una reserva desde el carrito de compras">​</a></h3>
+<p><strong>Descripción del Flujo:</strong></p>
+<p>Este flujo describe el proceso para que un cliente realice una reserva de los recursos, incluyendo el acceso al carrtio y la edicion del mismo.</p>
+<ol>
+<li><strong>Visualización de la Página Principal</strong>
+<ul>
+<li>La página se muestra sin necesidad de iniciar sesión.</li>
+<li>La pantalla muestra una carga incial de todos los recursos disponibles para ese dia.</li>
+<li>El cliente ve la opción de buscar el recurso en el inventario disponible.</li>
+</ul>
+</li>
+<li><strong>Búsqueda y Consulta de Disponibilidad</strong>
+<ul>
+<li>El cliente selecciona la fecha (obligatorio), la hora (opcional) y el tipo de recurso (opcional).<!-- -->
+<ul>
+<li>Si hay recursos disponibles, continúa el flujo.</li>
+<li>Si no, se muestra un mensaje que invita a elegir otra fecha o recurso.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Selección del Recurso y Configuración de la Reserva</strong>
+<ul>
+<li>El cliente elige el recurso específico y ajusta parámetros como la cantidad o la ubicación.</li>
+</ul>
+</li>
+<li><strong>Accion de Agreega a carrito</strong>
+<ul>
+<li>El cliente revisa la información y confirma los datos ingresados.<!-- -->
+<ul>
+<li>Si el cliente tiene sesión activa, continúa el flujo.</li>
+<li>Si no tiene sesión, se le solicita quen iicie sesión o se registre (se guardan los datos de la configuracion de la reserva temporalmente).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Envio a carrito</strong>
+<ul>
+<li>Despues de configurar las especificaciones del recurso a reservar se puede agregar al carrito, para que se reserve en grupo</li>
+</ul>
+</li>
+<li><strong>Notificación de Resultado</strong>
+<ul>
+<li>El cliente recibe una notificación confirmando que la reserva ha sido agregada al carrito.</li>
+</ul>
+</li>
+<li><strong>Regresa a la pantalla principal</strong>
+<ul>
+<li>El cliente regresa a la pagina principal.</li>
+</ul>
+</li>
+<li><strong>Acceso al carrito</strong>
+-El carrito se muestra en la pagina de inicio, pero solo se puede acceder si la sesion esta activa</li>
+<li><strong>Mostrar Carrito</strong>
+<ul>
+<li>Al entrar en la pagina de carrito de compra se mostrar la lista de recursos guardados y las cantidades (si un recurso ya no tiene la cantidad indicada en el carrito disponible se mostrar un mensaje al susario para que lo ajuste)</li>
+<li>cada uno tendra la opcion para eliminar o cambiar la cantidad, asi como agregar algun comentario</li>
+</ul>
+</li>
+<li><strong>Configuración de la Reserva</strong></li>
+</ol>
+<ul>
+<li>El cliente elige el recurso específico y ajusta parámetros como la cantidad o la ubicación.</li>
+</ul>
+<ol start="11">
+<li><strong>Validacion de campos y envio de reserva</strong></li>
+</ol>
+<ul>
+<li>Se validan los campos requeridos y la disponibilidad de los recuros al momento de enviar la solicitud de reserva</li>
+</ul>
+<ol start="12">
+<li><strong>Notificación de Resultado</strong></li>
+</ol>
+<ul>
+<li>El cliente recibe una notificación confirmando que la reserva ha sido registrada, incluyendo los posibles estados de pendiente, aprobación o rechazo.</li>
+</ul>
+<ol start="13">
+<li><strong>Baciar el carrito</strong></li>
+</ol>
+<ul>
+<li>Al crear la reserva con los recursos del carrito, este eliminina todos los recurso asociados al carrito del cliente.</li>
+</ul>
+<ol start="14">
+<li><strong>Regresa a la pantalla principal</strong></li>
+</ol>
+<ul>
+<li>El cliente regresa a la pagina principal.</li>
+</ul>
+<p><strong>Diagrama</strong></p>
+<!-- -->
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="editar-una-reserva">Editar una Reserva<a href="#editar-una-reserva" class="hash-link" aria-label="Direct link to Editar una Reserva" title="Direct link to Editar una Reserva">​</a></h2>
 <p><strong>Descripción del Flujo:</strong></p>
@@ -377,6 +464,6 @@
 </li>
 </ol>
 <p><strong>Diagrama</strong></p>
-</div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/user-flow/reservation-flow.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/EventReservationAppDocs/docs/user-flow/Admin-flow"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Flujo de Usuarios</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/EventReservationAppDocs/docs/user-flow/resource-flow"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Flujo de Recursos</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#consulta-de-todas-las-reservas" class="table-of-contents__link toc-highlight">Consulta de todas las Reservas</a><ul><li><a href="#el-administrador-consulta-las-reservas" class="table-of-contents__link toc-highlight">El Administrador Consulta las reservas</a></li><li><a href="#el-cliente-consulta-las-reservas" class="table-of-contents__link toc-highlight">El Cliente Consulta las reservas</a></li></ul></li><li><a href="#cosultar-el-detalle-de-reserva" class="table-of-contents__link toc-highlight">Cosultar el detalle de Reserva</a><ul><li><a href="#el-administrador-consulta-el-detalle-de-una-reserva" class="table-of-contents__link toc-highlight">El Administrador Consulta el detalle de una reserva</a></li><li><a href="#el-cliente-consulta-el-detalle-de-una-reserva" class="table-of-contents__link toc-highlight">El Cliente Consulta el detalle de una reserva</a></li></ul></li><li><a href="#creacion-de-reservas" class="table-of-contents__link toc-highlight">Creacion de Reservas</a><ul><li><a href="#reservar-un-unico-recrurso" class="table-of-contents__link toc-highlight">Reservar un unico recrurso</a></li><li><a href="#reservar-un-grupo-de-recrursos" class="table-of-contents__link toc-highlight">Reservar un grupo de recrursos</a></li></ul></li><li><a href="#editar-una-reserva" class="table-of-contents__link toc-highlight">Editar una Reserva</a></li><li><a href="#cancelar-una-reserva" class="table-of-contents__link toc-highlight">Cancelar una Reserva</a></li><li><a href="#pagar-una-reserva" class="table-of-contents__link toc-highlight">Pagar una Reserva</a></li><li><a href="#modificar-estado-de-la-reserva" class="table-of-contents__link toc-highlight">Modificar estado de la Reserva</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/EventReservationAppDocs/docs/intro">Documentación</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://x.com/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">X<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/EventReservationAppDocs/blog">Blog</a></li><li class="footer__item"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 My Project, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/user-flow/reservation-flow.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/EventReservationAppDocs/docs/user-flow/Admin-flow"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Flujo de Usuarios</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/EventReservationAppDocs/docs/user-flow/resource-flow"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Flujo de Recursos</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#consulta-de-todas-las-reservas" class="table-of-contents__link toc-highlight">Consulta de todas las Reservas</a><ul><li><a href="#el-administrador-consulta-las-reservas" class="table-of-contents__link toc-highlight">El Administrador Consulta las reservas</a></li><li><a href="#el-cliente-consulta-las-reservas" class="table-of-contents__link toc-highlight">El Cliente Consulta las reservas</a></li></ul></li><li><a href="#cosultar-el-detalle-de-reserva" class="table-of-contents__link toc-highlight">Cosultar el detalle de Reserva</a><ul><li><a href="#el-administrador-consulta-el-detalle-de-una-reserva" class="table-of-contents__link toc-highlight">El Administrador Consulta el detalle de una reserva</a></li><li><a href="#el-cliente-consulta-el-detalle-de-una-reserva" class="table-of-contents__link toc-highlight">El Cliente Consulta el detalle de una reserva</a></li></ul></li><li><a href="#creacion-de-reservas" class="table-of-contents__link toc-highlight">Creacion de Reservas</a><ul><li><a href="#crear-una-reserva-individual" class="table-of-contents__link toc-highlight">Crear una reserva individual</a></li><li><a href="#crear-una-reserva-desde-el-carrito-de-compras" class="table-of-contents__link toc-highlight">Crear una reserva desde el carrito de compras</a></li></ul></li><li><a href="#editar-una-reserva" class="table-of-contents__link toc-highlight">Editar una Reserva</a></li><li><a href="#cancelar-una-reserva" class="table-of-contents__link toc-highlight">Cancelar una Reserva</a></li><li><a href="#pagar-una-reserva" class="table-of-contents__link toc-highlight">Pagar una Reserva</a></li><li><a href="#modificar-estado-de-la-reserva" class="table-of-contents__link toc-highlight">Modificar estado de la Reserva</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/EventReservationAppDocs/docs/intro">Documentación</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://x.com/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">X<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/EventReservationAppDocs/blog">Blog</a></li><li class="footer__item"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 My Project, Inc. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>
