@@ -5,15 +5,14 @@ title: Detalle de Reserva
 
 ## Entidad ReservationDetail
 
- Propiedades: 
- - `Id` : `int` | Identificador unico de la reserva 
- - `ReservationId` : `int` | Llave foranea para relacionar el detalle de la reserva con la reserva.
- - `ResourceId` : `int` | Llave foranea para relacionar el recurso con la reserva.
- - `Cantidad` : `int` | Numero de unidades del recurso reservado.
- - `Precio` : `numeric` | Precio por unidad al momento de reservar.
- 
+Propiedades: 
+- `Id` : `int` | Identificador único del detalle de la reserva
+- `ReservationId` : `int` | Llave foránea para relacionar el detalle de la reserva con la reserva.
+- `ResourceId` : `int` | Llave foránea para relacionar el recurso con la reserva.
+- `Cantidad` : `int` | Número de unidades del recurso reservado.
+- `Precio` : `numeric` | Precio por unidad al momento de reservar.
 
- ``` mermaid
+``` mermaid
 erDiagram
     ReservationDetail {
         int Id

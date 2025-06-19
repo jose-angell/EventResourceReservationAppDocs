@@ -3,13 +3,13 @@ sidebar_position: 7
 title: Carrito de compras
 ---
 
-## Entidad shoppingCart
+## Entidad ShoppingCart
 
- Propiedades: 
- - `Id` : `int` | Identificador unico del carrito de ccompras.
- - `RecursoId` : `int` | Llave foranea para saber que recurso esta relacionado con el carrito
- - `Cantidad` : `int` | Cantidad de unidades a reservar
- - `ClienteId` : `int` | Llave foranea para identificar al usuario al que le pertenece el carrito.
+Propiedades: 
+- `Id` : `int` | Identificador único del carrito de compras.
+- `RecursoId` : `int` | Llave foránea para saber qué recurso está relacionado con el carrito
+- `Cantidad` : `int` | Cantidad de unidades a reservar
+- `ClienteId` : `int` | Llave foránea para identificar al usuario al que le pertenece el carrito.
 
 ## Diagrama
 ```mermaid

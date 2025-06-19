@@ -8,14 +8,14 @@ title: Flujo de Reservas
 
 **Descripción del Flujo**
 
-Este flujo describe el proceso para consultar las reservas. Existen dos rutas para realizar la consulta, la que usa el administrador utilizando su dashboard de administracicon y la del cliente desde su respectivo dashboard enfocado en su actividad en la aplicacion.
+Este flujo describe el proceso para consultar las reservas. Existen dos rutas para realizar la consulta, la que usa el administrador utilizando su dashboard de administración y la del cliente desde su respectivo dashboard enfocado en su actividad en la aplicación.
 
 ### El Administrador Consulta las reservas
-1. **Accesso al dashboard de administrador**
-   - El Administrador debe inciar sesion para poder acceder al panel.
-   - La opcion para acceder al panel solo se muestra en el menu si la sesion es activa
+1. **Acceso al dashboard de administrador**
+   - El Administrador debe iniciar sesión para poder acceder al panel.
+   - La opción para acceder al panel solo se muestra en el menú si la sesión es activa
 2. **Mostrar el panel administrativo**
-   - El adminitrador accede al panel administrativo con una vista practiva y resumida de las reservas.
+   - El administrador accede al panel administrativo con una vista práctica y resumida de las reservas.
    - Visualiza la lista de reservas.
 3. **Acciones disponibles**
    - En la lista de reservas cada una permite al administrador acceder a los detalles de la misma.
@@ -35,17 +35,17 @@ graph TD;
 ```
 
 ### El Cliente Consulta las reservas
-1. **Accesso al dashboard de cliente**
-   - El cliente debe inciar sesion para poder acceder al panel.
-   - La opcion para acceder al panel solo se muestra en el menu si la sesion es activa
-2. **Visualizacion del dashboard de cliente**
-   - Inicalmente se muestra todas las reservas realizadas, inicando por la ultima.
-   - El usuario podra filtrar las reservas por estado, fecha, tipo de recurso.
+1. **Acceso al dashboard de cliente**
+   - El cliente debe iniciar sesión para poder acceder al panel.
+   - La opción para acceder al panel solo se muestra en el menú si la sesión es activa
+2. **Visualización del dashboard de cliente**
+   - Inicialmente se muestran todas las reservas realizadas, iniciando por la última.
+   - El usuario podrá filtrar las reservas por estado, fecha, tipo de recurso.
 3. **Acciones para cada reserva**
-   - Cada reserva mostrar las siguientes acciones permitidas para el usuario
-      - Editar: al seleccionarlo se mostrara el formulario con los datos que se permiten editar.
-      - Eliminar: Al seleccionarlo, este mostrara un modal para confirmar la accion de eliminacion.
-      - Detalle: Se redirigira al usuario a la pangina con los detalles de la reseva.
+   - Cada reserva muestra las siguientes acciones permitidas para el usuario
+      - Editar: al seleccionarlo se mostrará el formulario con los datos que se permiten editar.
+      - Eliminar: Al seleccionarlo, este mostrará un modal para confirmar la acción de eliminación.
+      - Detalle: Se redirigirá al usuario a la página con los detalles de la reserva.
 
 **Diagrama**
 ```mermaid
@@ -59,12 +59,10 @@ graph TD;
     F --> G[Muestra dashboard con lista de reservas ]
     G --> H[Cliente aplica filtros]
     H --> I[Selecciona una reserva]
-
     I --> J{¿Acción seleccionada?}
     J -->|Editar| K[Muestra formulario editable con datos permitidos]
     J -->|Eliminar| L[Muestra modal de confirmación de eliminación]
     J -->|Detalle| M[Redirige a la página de detalle de la reserva]
-
     K --> N[Regresa al dashboard]
     L --> N
     M --> N
@@ -72,24 +70,24 @@ graph TD;
 
 ```
 ---
-## Cosultar el detalle de Reserva
+## Consultar el detalle de Reserva
 
 **Descripción del Flujo**
 
-Este flujo describe el proceso para realizar la consulta al detalle de una reserva en especifico en el sistema.
+Este flujo describe el proceso para realizar la consulta al detalle de una reserva en específico en el sistema.
 
 ### El Administrador Consulta el detalle de una reserva
-1. **Accesso al dashboard de administracion**
-   - El Administrador debe inciar sesion para poder acceder al panel.
-   - La opcion para acceder al panel solo se muestra en el menu si la sesion es activa
-2. **Mostrar al dashboard administrativo**
-   - El adminitrador accede al panel administrativo con una vista practiva y resumida de las reservas.
+1. **Acceso al dashboard de administración**
+   - El Administrador debe iniciar sesión para poder acceder al panel.
+   - La opción para acceder al panel solo se muestra en el menú si la sesión es activa
+2. **Mostrar el dashboard administrativo**
+   - El administrador accede al panel administrativo con una vista práctica y resumida de las reservas.
    - Visualiza la lista de reservas.
 3. **Seleccionar una reserva**
-   - Al usar la accion de `detalle` se mostrara la pagina de detalle para la reserva seleccionada.
-4. **Mostrar informacion**
-   - Se mostrar toda la informacion relacionada con la reserva, incluyendo recursos, catidad, costos, imagenes, estado, etc.
-   - Tambien se permitira cambiar el estado de la reserva.
+   - Al usar la acción de `detalle` se mostrará la página de detalle para la reserva seleccionada.
+4. **Mostrar información**
+   - Se muestra toda la información relacionada con la reserva, incluyendo recursos, cantidad, costos, imágenes, estado, etc.
+   - También se permitirá cambiar el estado de la reserva.
 5. **Regresa al dashboard**
    - Al terminar de revisar los detalles de la reserva, se puede regresar a la lista de reservas.
 
@@ -115,17 +113,17 @@ graph TD;
 ```
 
 ### El Cliente Consulta el detalle de una reserva
-1. **Accesso al dashboard de cliente**
-   - El cliente debe inciar sesion para poder acceder al panel.
-   - La opcion para acceder al panel solo se muestra en el menu si la sesion es activa
-2. **Visualizacion del dashboard de cliente**
-   - Inicalmente se muestra todas las reservas realizadas, inicando por la ultima.
-   - El usuario podra filtrar las reservas por estado, fecha, tipo de recurso.
+1. **Acceso al dashboard de cliente**
+   - El cliente debe iniciar sesión para poder acceder al panel.
+   - La opción para acceder al panel solo se muestra en el menú si la sesión es activa
+2. **Visualización del dashboard de cliente**
+   - Inicialmente se muestran todas las reservas realizadas, iniciando por la última.
+   - El usuario podrá filtrar las reservas por estado, fecha, tipo de recurso.
 3. **Seleccionar una reserva**
-   - Al usar la accion de `detalle` se mostrara la pagina de detalle para la reserva seleccionada.
-4. **Mostrar informacion**
-   - Se mostrar toda la informacion relacionada con la reserva, incluyendo recursos, catidad, costos, imagenes, estado, etc.
-   - Tambien se permitira pasar a la pantalla de edicion utilizando un boton.
+   - Al usar la acción de `detalle` se mostrará la página de detalle para la reserva seleccionada.
+4. **Mostrar información**
+   - Se muestra toda la información relacionada con la reserva, incluyendo recursos, cantidad, costos, imágenes, estado, etc.
+   - También se permitirá pasar a la pantalla de edición utilizando un botón.
 5. **Regresa al dashboard**
    - Al terminar de revisar los detalles de la reserva, se puede regresar a la lista de reservas.
 
@@ -150,16 +148,16 @@ graph TD;
 ```
 ---
 
-## Creacion de Reservas
+## Creación de Reservas
 
 ### Crear una reserva individual
 **Descripción del Flujo**
 
-Este flujo describe el proceso para que un cliente realice una reserva en el sistema de un unico recurso.
+Este flujo describe el proceso para que un cliente realice una reserva en el sistema de un único recurso.
 
 1. **Visualización de la Página Principal**  
    - La página se muestra sin necesidad de iniciar sesión.
-   - La pantalla muestra una carga incial de todos los recursos disponibles para ese dia.
+   - La pantalla muestra una carga inicial de todos los recursos disponibles para ese día.
    - El cliente ve la opción de buscar el recurso en el inventario disponible.
 
 2. **Búsqueda y Consulta de Disponibilidad**  
@@ -173,7 +171,7 @@ Este flujo describe el proceso para que un cliente realice una reserva en el sis
 4. **Confirmación de la Reserva**  
    - El cliente revisa la información y confirma los datos ingresados.
      - Si el cliente tiene sesión activa, continúa el flujo.
-     - Si no tiene sesión, se le solicita quen iicie sesión o se registre (se guardan los datos de la configuracion de la reserva temporalmente).
+     - Si no tiene sesión, se le solicita que inicie sesión o se registre (se guardan los datos de la configuración de la reserva temporalmente).
 
 5. **Envío de la Solicitud de Reserva**  
    - El sistema registra la solicitud.
@@ -184,7 +182,7 @@ Este flujo describe el proceso para que un cliente realice una reserva en el sis
    - El cliente recibe una notificación confirmando que la reserva ha sido registrada, incluyendo los posibles estados de pendiente, aprobación o rechazo.
 
 7. **Regresa a la pantalla principal**
-   - El cliente regresa a la pagina principal.
+   - El cliente regresa a la página principal.
 
 
 ``` mermaid
@@ -221,12 +219,12 @@ graph TD;
 
 **Descripción del Flujo:**
 
-Este flujo describe el proceso para que un cliente realice una reserva de los recursos, incluyendo el acceso al carrtio y la edicion del mismo.
+Este flujo describe el proceso para que un cliente realice una reserva de los recursos, incluyendo el acceso al carrito y la edición del mismo.
 
 
 1. **Visualización de la Página Principal**  
    - La página se muestra sin necesidad de iniciar sesión.
-   - La pantalla muestra una carga incial de todos los recursos disponibles para ese dia.
+   - La pantalla muestra una carga inicial de todos los recursos disponibles para ese día.
    - El cliente ve la opción de buscar el recurso en el inventario disponible.
 2. **Búsqueda y Consulta de Disponibilidad**  
    - El cliente selecciona la fecha (obligatorio), la hora (opcional) y el tipo de recurso (opcional).
@@ -234,31 +232,31 @@ Este flujo describe el proceso para que un cliente realice una reserva de los re
      - Si no, se muestra un mensaje que invita a elegir otra fecha o recurso.
 3. **Selección del Recurso y Configuración de la Reserva**  
    - El cliente elige el recurso específico y ajusta parámetros como la cantidad o la ubicación.
-4. **Accion de Agreega a carrito**  
+4. **Acción de Agregar a carrito**  
    - El cliente revisa la información y confirma los datos ingresados.
      - Si el cliente tiene sesión activa, continúa el flujo.
-     - Si no tiene sesión, se le solicita quen iicie sesión o se registre (se guardan los datos de la configuracion de la reserva temporalmente).
-5. **Envio a carrito** 
-   - Despues de configurar las especificaciones del recurso a reservar se puede agregar al carrito, para que se reserve en grupo
+     - Si no tiene sesión, se le solicita que inicie sesión o se registre (se guardan los datos de la configuración de la reserva temporalmente).
+5. **Envío a carrito** 
+   - Después de configurar las especificaciones del recurso a reservar se puede agregar al carrito, para que se reserve en grupo
 6. **Notificación de Resultado**  
    - El cliente recibe una notificación confirmando que la reserva ha sido agregada al carrito.
 7. **Regresa a la pantalla principal**
-   - El cliente regresa a la pagina principal.
+   - El cliente regresa a la página principal.
 8. **Acceso al carrito**
-   -El carrito se muestra en la pagina de inicio, pero solo se puede acceder si la sesion esta activa
+   - El carrito se muestra en la página de inicio, pero solo se puede acceder si la sesión está activa
 9. **Mostrar Carrito** 
-   - Al entrar en la pagina de carrito de compra se mostrar la lista de recursos guardados y las cantidades (si un recurso ya no tiene la cantidad indicada en el carrito disponible se mostrar un mensaje al susario para que lo ajuste)
-   - cada uno tendra la opcion para eliminar o cambiar la cantidad, asi como agregar algun comentario
+   - Al entrar en la página de carrito de compra se muestra la lista de recursos guardados y las cantidades (si un recurso ya no tiene la cantidad indicada en el carrito disponible se muestra un mensaje al usuario para que lo ajuste)
+   - cada uno tendrá la opción para eliminar o cambiar la cantidad, así como agregar algún comentario
 10. **Configuración de la Reserva**  
    - El cliente elige el recurso específico y ajusta parámetros como la cantidad o la ubicación.
-11. **Validacion de campos y envio de reserva**
-   - Se validan los campos requeridos y la disponibilidad de los recuros al momento de enviar la solicitud de reserva
+11. **Validación de campos y envío de reserva**
+   - Se validan los campos requeridos y la disponibilidad de los recursos al momento de enviar la solicitud de reserva
 12. **Notificación de Resultado**  
    - El cliente recibe una notificación confirmando que la reserva ha sido registrada, incluyendo los posibles estados de pendiente, aprobación o rechazo.
-13. **Baciar el carrito**
-   - Al crear la reserva con los recursos del carrito, este eliminina todos los recurso asociados al carrito del cliente.
+13. **Vaciar el carrito**
+   - Al crear la reserva con los recursos del carrito, este elimina todos los recursos asociados al carrito del cliente.
 14. **Regresa a la pantalla principal**
-   - El cliente regresa a la pagina principal.
+   - El cliente regresa a la página principal.
 
 **Diagrama**
 ```mermaid
@@ -300,22 +298,22 @@ graph TD;
 
 **Descripción del Flujo:**
 
-Este flujo describe el proceso para que un cliente realice una edicion de la reserva en el sistema.
+Este flujo describe el proceso para que un cliente realice una edición de la reserva en el sistema.
 
-1. **Acceso a la pangina de edicion**
-   - Existe dos forma de acceder a la edicion de una reserva
-      - Seleccionando la accion en el listado de reservas.
+1. **Acceso a la página de edición**
+   - Existen dos formas de acceder a la edición de una reserva
+      - Seleccionando la acción en el listado de reservas.
       - Desde el detalle de la reserva.
-2. **Visualizacion del formulario de edicion**
-   - Dentro de cada campo del formulario se mostrara la informacion guardada.
-3. **Confirmar o cancelar Edicion** 
-   - En caso de editar algun campo del formaulario se puede guardar los cambio en la base de datos.
-   - Si se cancela la edicion solo se regresa a la pantalla de origen, ya sea la lista de reservas o la pantalla de detalle
+2. **Visualización del formulario de edición**
+   - Dentro de cada campo del formulario se mostrará la información guardada.
+3. **Confirmar o cancelar Edición** 
+   - En caso de editar algún campo del formulario se pueden guardar los cambios en la base de datos.
+   - Si se cancela la edición solo se regresa a la pantalla de origen, ya sea la lista de reservas o la pantalla de detalle
 4. **Notificación de Resultado**  
    - El cliente recibe una notificación confirmando que la reserva ha sido editada.
-   - El administrador recibe una notificacion sobre el cambio de la reserva.
+   - El administrador recibe una notificación sobre el cambio de la reserva.
 5. **Regresa a la pantalla de origen**
-   - El cliente regresa a la pagina de origen, que podria se la lista de reservas o la pantalla de detalle.
+   - El cliente regresa a la página de origen, que podría ser la lista de reservas o la pantalla de detalle.
 
 **Diagrama**
 ```mermaid
@@ -343,24 +341,24 @@ graph TD;
 
 **Descripción del Flujo:**
 
-Este flujo describe el proceso para que un cliente realice una cancelacion de una reserva en especifico en el sistema.
+Este flujo describe el proceso para que un cliente realice una cancelación de una reserva en específico en el sistema.
 
-1. **Visualizacion del dashboard de cliente**
-   - Inicalmente se muestra todas las reservas realizadas, inicando por la ultima.
-2. **Busqueda de la reserva**
-   - El cliente buscala reserva que quiere eliminar.
-   - Puede utilizar los filtro o buscarla manualmente.
-3. **Cancelacion de reserva**
-   - En la reserva excite una accion para cancelar la reserva
-4. **Mostrar mensaje de confirmacion**
-   - Se mostrar un mensaje para que el usuario confirme si desea cancelar la reserva
-      - Si confirma la cancelacion esta se reflejara en la base de datos.
-      - Si cancela la accion el mensaje solo se cerrara y no se guardara ningun cambio.
-5. **Notificacion de cambios**
-   - El sistema notifica al administrador de la cancelacion de la reserva.
-   - Tambien se liberaran los recursos.
+1. **Visualización del dashboard de cliente**
+   - Inicialmente se muestran todas las reservas realizadas, iniciando por la última.
+2. **Búsqueda de la reserva**
+   - El cliente busca la reserva que quiere eliminar.
+   - Puede utilizar los filtros o buscarla manualmente.
+3. **Cancelación de reserva**
+   - En la reserva existe una acción para cancelar la reserva
+4. **Mostrar mensaje de confirmación**
+   - Se muestra un mensaje para que el usuario confirme si desea cancelar la reserva
+      - Si confirma la cancelación esta se reflejará en la base de datos.
+      - Si cancela la acción el mensaje solo se cerrará y no se guardará ningún cambio.
+5. **Notificación de cambios**
+   - El sistema notifica al administrador de la cancelación de la reserva.
+   - También se liberarán los recursos.
 6. **Ocultar mensaje**
-   - Se cerrar el mensaje y se mostrar de nuevo la lista de reservas
+   - Se cierra el mensaje y se muestra de nuevo la lista de reservas
 
 **Diagrama**
 ```mermaid
@@ -389,23 +387,23 @@ graph TD;
 
 **Descripción del Flujo:**
 
-Este flujo describe el proceso para que un cliente realice el pago de una reserva en especifico en el sistema.
+Este flujo describe el proceso para que un cliente realice el pago de una reserva en específico en el sistema.
 
-1. **Visualizacion del dashboard de cliente**
-   - Inicalmente se muestra todas las reservas realizadas, inicando por la ultima.
-2. **Busqueda de la reserva**
-   - El cliente buscala reserva que quiere eliminar.
-   - Puede utilizar los filtro o buscarla manualmente.
+1. **Visualización del dashboard de cliente**
+   - Inicialmente se muestran todas las reservas realizadas, iniciando por la última.
+2. **Búsqueda de la reserva**
+   - El cliente busca la reserva que quiere eliminar.
+   - Puede utilizar los filtros o buscarla manualmente.
 3. **Seleccionar una reserva**
-   - Al usar la accion de `detalle` se mostrara la pagina de detalle para la reserva seleccionada.
-4. **Seleccionar la accion de pago**
-   - Dentro de la pantalla de detalle se muestra la accion de pagar.
-      - Se llevara al usuario a la pasarela de pago.
+   - Al usar la acción de `detalle` se mostrará la página de detalle para la reserva seleccionada.
+4. **Seleccionar la acción de pago**
+   - Dentro de la pantalla de detalle se muestra la acción de pagar.
+      - Se llevará al usuario a la pasarela de pago.
 5. **Notificación de Resultado**  
-   - El cliente recibe una notificación confirmando que proceso de pago ha terminado, incluyendo los posibles estados de aprobación o rechazo.
-   - Se notificara el pago al administrador.
+   - El cliente recibe una notificación confirmando que el proceso de pago ha terminado, incluyendo los posibles estados de aprobación o rechazo.
+   - Se notificará el pago al administrador.
 6. **Regresa a la pantalla principal**
-   - El cliente regresa a la pagina principal.
+   - El cliente regresa a la página principal.
 
 **Diagrama**
 ```mermaid
@@ -434,23 +432,23 @@ graph TD;
 
 **Descripción del Flujo:**
 
-Este flujo describe el proceso para que un administrador realice el cambio de estado de una reserva en especifico en el sistema.
+Este flujo describe el proceso para que un administrador realice el cambio de estado de una reserva en específico en el sistema.
 
-1. **Visualizacion del dashboard de administracion**
-   - inicalmente se muestra todas las reservas realizadas por todos los clientes, inicando por la ultima.
-   - El usuario podra filtrar las reservas por estado, fecha, tipo de recurso.
+1. **Visualización del dashboard de administración**
+   - Inicialmente se muestran todas las reservas realizadas por todos los clientes, iniciando por la última.
+   - El usuario podrá filtrar las reservas por estado, fecha, tipo de recurso.
 2. **Seleccionar una reserva**
-   - Al usar la accion de `detalle` se mostrara la pagina de detalle para la reserva seleccionada.
-3. **Mostrar informacion**
-   - Se mostrar toda la informacion relacionada con la reserva, para que el administrador evalue la reserva.
+   - Al usar la acción de `detalle` se mostrará la página de detalle para la reserva seleccionada.
+3. **Mostrar información**
+   - Se muestra toda la información relacionada con la reserva, para que el administrador evalúe la reserva.
 4. **Aprobar o rechazar reserva**
-   - El administrador tiene la opcion de rechazar o aprobar la reserva.
-      - En caso de aprorbar la reserva puede agregar un comentario o observacion.
+   - El administrador tiene la opción de rechazar o aprobar la reserva.
+      - En caso de aprobar la reserva puede agregar un comentario u observación.
       - Si la reserva es rechazada se puede agregar el motivo del rechazo.
 5. **Notificación de Resultado**  
    - El cliente recibe una notificación confirmando el estado de la reserva.
 6. **Regresa a la pantalla principal**
-   - El administrador regresa a la pagina de reservas.
+   - El administrador regresa a la página de reservas.
 
 **Diagrama**
 ```mermaid

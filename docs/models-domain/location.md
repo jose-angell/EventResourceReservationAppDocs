@@ -1,21 +1,21 @@
 ---
 sidebar_position: 5
-title: Ubicacion
+title: Ubicación
 ---
 
-## Entidad location
+## Entidad Location
 
- Propiedades: 
- - `Id` : `int` | Identificador unico de la ubicacion 
- - `Pais` : `string` | Pais donde se entregaran los recursos de la reserva o donde se almacenan los recursos
- - `Ciudad` : `string` | Ciudad donde se ubicara el evento o o donde se almacenan los recursos
- - `CodigoPostal` : `int` | Codigo postal de la ubicacion registrada
- - `Calle` : `string` | Nombre de la calle de la ubicacion
- - `Colonia` : `string` | Nombre de la colonia de la ubicacion
- - `NumeroExterior` : `string` | Numero exterior de la ubicacion registrada
- - `NumeroInterior` : `string` | Numero interior de la ubicacion registrada
- - `UsuarioCreacionId` : `int` | Llave foranea para identificar al usuario al que le pertenece la ubicacion.
- - `FechaCreacion` : `DateTime` | Fecha de crecion de la ubicacion.
+Propiedades: 
+- `Id` : `int` | Identificador único de la ubicación
+- `Pais` : `string` | País donde se entregarán los recursos de la reserva o donde se almacenan los recursos
+- `Ciudad` : `string` | Ciudad donde se ubicará el evento o donde se almacenan los recursos
+- `CodigoPostal` : `int` | Código postal de la ubicación registrada
+- `Calle` : `string` | Nombre de la calle de la ubicación
+- `Colonia` : `string` | Nombre de la colonia de la ubicación
+- `NumeroExterior` : `string` | Número exterior de la ubicación registrada
+- `NumeroInterior` : `string` | Número interior de la ubicación registrada
+- `UsuarioCreacionId` : `int` | Llave foránea para identificar al usuario al que le pertenece la ubicación.
+- `FechaCreacion` : `DateTime` | Fecha de creación de la ubicación.
 
 
 ```mermaid

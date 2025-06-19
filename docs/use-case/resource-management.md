@@ -43,8 +43,7 @@ sequenceDiagram
 ---
 
 ## Agregar un Recurso
-Para facilitar el flujo de aprobacion de reservas se configurara los recorsos para poder indentificar cuando la autorizacion de la reserva de dicho recurso es 
-automatica o manual (donde el administrador debe autorizar).
+Para facilitar el flujo de aprobación de reservas se configurarán los recursos para poder identificar cuándo la autorización de la reserva de dicho recurso es automática o manual (donde el administrador debe autorizar).
 
 **Flujo Básico**
 1. El administrador accede al formulario para agregar un nuevo recurso.

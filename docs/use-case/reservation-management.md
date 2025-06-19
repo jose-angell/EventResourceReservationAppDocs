@@ -20,10 +20,10 @@ Este documento describe los procesos de gestión de reservas dentro del sistema.
 **Flujo básico:**
 1. El cliente inicia sesión.
 2. Consulta la disponibilidad de recursos para una fecha determinada.
-3. Selecciona uno o varios recursos y añade detalles (número de personas, horario, cantidad, etc).
+3. Selecciona uno o varios recursos y añade detalles (número de personas, horario, cantidad, etc.).
 4. Envía la solicitud de reserva.
 5. El sistema notifica al administrador.
-6. Se muestra una notificación de confimación de solicitud al cliente. 
+6. Se muestra una notificación de confirmación de solicitud al cliente. 
 
 
 ```mermaid
@@ -74,7 +74,7 @@ sequenceDiagram
 ---
 
 ### **Cliente: Editar una Reserva**
-Las ediciones solo se pueden hacer 24 horas antes de la fecha de la reserva y estaran sujetas a disponibilidades de los recursos
+Las ediciones solo se pueden hacer 24 horas antes de la fecha de la reserva y estarán sujetas a disponibilidades de los recursos.
 
 **Flujo básico:**
 1. El cliente accede a su listado de reservas.
@@ -108,14 +108,14 @@ sequenceDiagram
 ---
 
 ### **Cliente: Cancelar una Reserva**
-Las cancelaciones solo se pueden hacer 24 horas antes de la fecha de la reserva
+Las cancelaciones solo se pueden hacer 24 horas antes de la fecha de la reserva.
 
 **Flujo básico:**
 1. El cliente accede a la lista de reservas activas.
 2. Selecciona la opción de cancelar.
-3. valida los datos y confima cancelacion.
+3. Valida los datos y confirma cancelación.
 4. El sistema notifica al administrador.
-5. Se envía una notificación de confirmación cliente.
+5. Se envía una notificación de confirmación al cliente.
 
 ```mermaid
 sequenceDiagram
@@ -166,13 +166,13 @@ sequenceDiagram
 ```
 ---
 
-### **Cliente: visualizar detalles de la reserva**
-**Flujo básico**
+### **Cliente: Visualizar detalles de la reserva**
+**Flujo básico:**
 1. El cliente inicia sesión.
-2. El cliente accede a la lista de reservas
-3. Selecciona la opcion de detalle de la reserva.
+2. El cliente accede a la lista de reservas.
+3. Selecciona la opción de detalle de la reserva.
 4. Se muestra una pantalla con los detalles de los recursos, fechas, horarios, estatus, pago.
-5. se puede volver a la pantalla principal y selecccionar otra reserva.
+5. Se puede volver a la pantalla principal y seleccionar otra reserva.
 
 ```mermaid
 sequenceDiagram

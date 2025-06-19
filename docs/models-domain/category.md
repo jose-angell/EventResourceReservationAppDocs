@@ -1,16 +1,16 @@
 ---
 sidebar_position: 6
-title: Categoria de recurso
+title: Categoría de recurso
 ---
 
 ## Entidad Category
 
- Propiedades: 
- - `Id` : `int` | Identificador unico del tipo de recurso.
- - `Nombre` : `string` | Nombre o descripcion corta del tipo de o categoria a la que pertienece el recurso.
- - `Descripcion` : `string` | Descripcion de la categorio  o tipo al que pertenece el recurso.
- - `UsuarioCreacionId` : `int` | Llave foranea para identificar al usuario al que le pertenece la ubicacion.
- - `FechaCreacion` : `DateTime` | Fecha de crecion de la ubicacion.
+Propiedades: 
+- `Id` : `int` | Identificador único del tipo de recurso.
+- `Nombre` : `string` | Nombre o descripción corta del tipo o categoría a la que pertenece el recurso.
+- `Descripcion` : `string` | Descripción de la categoría o tipo al que pertenece el recurso.
+- `UsuarioCreacionId` : `int` | Llave foránea para identificar al usuario que creó la ubicación.
+- `FechaCreacion` : `DateTime` | Fecha de creación de la ubicación.
 
 ## Diagrama
 ```mermaid
@@ -25,5 +25,4 @@ erDiagram
 
     User ||--o{ Category : "crea"
     Category ||--o{ Resource : "clasifica recurso"
-
 ```

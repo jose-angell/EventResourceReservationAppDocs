@@ -11,16 +11,16 @@ Este flujo describe el proceso para consultar los recursos.
 Existen dos formas de ver los recursos, la del administrador desde un panel administrativo y la del cliente que es la vista demostrativa.
 
 ### El Administrador Consulta los Recursos
-1. **Accesso al dashboard de administracion**
-   - El Administrador debe inciar sesion para poder acceder al panel.
-   - La opcion para acceder al panel solo se muestra en el menu si la sesion es activa
-2. **Mostrar al dashboard administrativo**
-   - El adminitrador accede al panel administrativo con una vista practiva y resumida de los recursos
+1. **Acceso al dashboard de administración**
+   - El Administrador debe iniciar sesión para poder acceder al panel.
+   - La opción para acceder al panel solo se muestra en el menú si la sesión es activa
+2. **Mostrar el dashboard administrativo**
+   - El administrador accede al panel administrativo con una vista práctica y resumida de los recursos
    - Visualiza la lista de recursos.
 3. **Acciones disponibles**
    - En la lista de recursos cada una muestra las siguientes acciones disponibles
-      - Editar recurso mostrando la pagina de edicion.
-      - Eliminar recurso mostrando un mesaje de confirmacion.
+      - Editar recurso mostrando la página de edición.
+      - Eliminar recurso mostrando un mensaje de confirmación.
       - Detalle del recurso.
 
 **Diagrama**
@@ -48,7 +48,7 @@ graph TD;
 ### El Cliente Consulta los Recursos
 1. **Visualización de la Página Principal**  
    - La página se muestra sin necesidad de iniciar sesión.
-   - La pantalla muestra una carga incial de todos los recursos disponibles para ese dia.
+   - La pantalla muestra una carga inicial de todos los recursos disponibles para ese día.
    - El cliente ve la opción de buscar el recurso en el inventario disponible.
 2. **Búsqueda y Consulta de Disponibilidad**  
    - El cliente selecciona la fecha (obligatorio), la hora (opcional) y el tipo de recurso (opcional).
@@ -84,16 +84,16 @@ Existen dos formas de ver el detalle del recurso, la del administrador desde un 
 
 ### El Administrador Consulta el detalle de un recurso.
 
-1. **Accesso al dashboard de administracion**
-   - El Administrador debe inciar sesion para poder acceder al panel.
-   - La opcion para acceder al panel solo se muestra en el menu si la sesion es activa
-2. **Mostrar al dashboard administrativo**
-   - El adminitrador accede al panel administrativo con una vista practiva y resumida de los recursos
+1. **Acceso al dashboard de administración**
+   - El Administrador debe iniciar sesión para poder acceder al panel.
+   - La opción para acceder al panel solo se muestra en el menú si la sesión es activa
+2. **Mostrar el dashboard administrativo**
+   - El administrador accede al panel administrativo con una vista práctica y resumida de los recursos
    - Visualiza la lista de recursos.
 3. **Selección de Recurso**  
    - El administrador puede acceder a los detalles de un recurso al seleccionar uno desde el dashboard.
-4. **Visualizacion del detalle**
-   - Se muestra la pagina con todos los detalles relevantes para el administrador relacionados con este recurso.
+4. **Visualización del detalle**
+   - Se muestra la página con todos los detalles relevantes para el administrador relacionados con este recurso.
 5. **Regresar al dashboard**
    - Al terminar de revisar el recurso el administrador puede regresar al dashboard y seguir consultando otros recursos.
 
@@ -117,18 +117,18 @@ graph TD;
 ### El Cliente Consulta el detalle del Recurso
 1. **Visualización de la Página Principal**  
    - La página se muestra sin necesidad de iniciar sesión.
-   - La pantalla muestra una carga incial de todos los recursos disponibles para ese dia.
+   - La pantalla muestra una carga inicial de todos los recursos disponibles para ese día.
    - El cliente ve la opción de buscar el recurso en el inventario disponible.
 2. **Búsqueda y Consulta de Disponibilidad**  
    - El cliente selecciona la fecha (obligatorio), la hora (opcional) y el tipo de recurso (opcional).
      - Si hay recursos disponibles, continúa el flujo.
      - Si no, se muestra un mensaje que invita a elegir otra fecha o recurso.
 3. **Selección de Recurso**  
-   - El cliente puede acceder a los detalles de un recurso al seleccionar uno desde la pangina principal.
-4. **Visualizacion del detalle**
-   - Se muestra la pagina con todos los detalles relevantes para el cliente relacionados con este recurso.
-5. **Regresar a la pagina principal**
-   - Al terminar de revisar el recurso el cliente puede regresar a la pagina principal para seguir buscando.
+   - El cliente puede acceder a los detalles de un recurso al seleccionar uno desde la página principal.
+4. **Visualización del detalle**
+   - Se muestra la página con todos los detalles relevantes para el cliente relacionados con este recurso.
+5. **Regresar a la página principal**
+   - Al terminar de revisar el recurso el cliente puede regresar a la página principal para seguir buscando.
 
 **Diagrama**
 ```mermaid
@@ -156,23 +156,23 @@ graph TD;
 
 Este flujo describe el proceso para que un administrador cree un recurso en el sistema. 
 
-1. **Accesso al dashboard de administracion**
-   - El Administrador debe inciar sesion para poder acceder al panel.
-   - La opcion para acceder al panel solo se muestra en el menu si la sesion es activa.
-2. **Mostrar al dashboard administrativo**
-   - El adminitrador accede al panel administrativo con una vista practiva y resumida de los recursos
+1. **Acceso al dashboard de administración**
+   - El Administrador debe iniciar sesión para poder acceder al panel.
+   - La opción para acceder al panel solo se muestra en el menú si la sesión es activa.
+2. **Mostrar el dashboard administrativo**
+   - El administrador accede al panel administrativo con una vista práctica y resumida de los recursos
    - Visualiza la lista de recursos.
 3. **Crear un recurso**
-   - En la parte superior de la lista se encuentra la accion para crear un nuevo recuros
-   - Al seleccionarla el se llevara al usuario a la pagina de creacion.
+   - En la parte superior de la lista se encuentra la acción para crear un nuevo recurso
+   - Al seleccionarla se llevará al usuario a la página de creación.
 4. **Mostrar Formulario**
-   - Al ingresar a la pangina de creacion de recursos se mostrara el formulario de los datos requeridos
-   - Se validaran los campos obligatorios antes de guardar los datos
-   - Si pasa las validaciones se guarda la informacion
+   - Al ingresar a la página de creación de recursos se mostrará el formulario de los datos requeridos
+   - Se validarán los campos obligatorios antes de guardar los datos
+   - Si pasa las validaciones se guarda la información
 5. **Notificación de Resultado:**  
-   - El usuario recibe una notificación confirmando que el recurso ha sido registrada, o si ocurrio algun error.
+   - El usuario recibe una notificación confirmando que el recurso ha sido registrado, o si ocurrió algún error.
 6. **Regreso al panel principal**
-   - Al finalizar la accion de creacion se regresa al dashboard
+   - Al finalizar la acción de creación se regresa al dashboard
 
 **Diagrama**
 ```mermaid
@@ -204,23 +204,23 @@ graph TD;
 
 Este flujo describe el proceso para que se edite un recurso en el sistema.
 
-1. **Accesso al panel de administracio**
-   - El Administrador debe inciar sesion para poder acceder al panel.
-   - La opcion para acceder al panel solo se muestra en el menu si la sesion es activa.
+1. **Acceso al panel de administración**
+   - El Administrador debe iniciar sesión para poder acceder al panel.
+   - La opción para acceder al panel solo se muestra en el menú si la sesión es activa.
 2. **Mostrar el panel administrativo**
-   - El adminitrador accede al panel administrativo con una vista practiva y resumida de los recursos
+   - El administrador accede al panel administrativo con una vista práctica y resumida de los recursos
    - Visualiza la lista de recursos.
 3. **Editar un recurso**
-   - En la lista se encuentra la accion para editar un recuro
-   - Al seleccionarla el se llevara al usuario a la pagina de edicion.
+   - En la lista se encuentra la acción para editar un recurso
+   - Al seleccionarla se llevará al usuario a la página de edición.
 4. **Mostrar Formulario**
-   - Al ingresar a la pangina de edicion de recursos se mostrara el formulario con los datos en sus respectivos
-   - Se validaran los campos obligatorios antes de guardar los datos
-   - Si pasa las validaciones se guarda la informacion
+   - Al ingresar a la página de edición de recursos se mostrará el formulario con los datos en sus respectivos campos
+   - Se validarán los campos obligatorios antes de guardar los datos
+   - Si pasa las validaciones se guarda la información
 5. **Notificación de Resultado:**  
-   - El usuario recibe una notificación confirmando que el recurso ha sido actualizado, o si ocurrio algun error.
+   - El usuario recibe una notificación confirmando que el recurso ha sido actualizado, o si ocurrió algún error.
 6. **Regreso al panel principal**
-   - Al finalizar la accion de creacion se regresa al dashboard
+   - Al finalizar la acción de edición se regresa al dashboard
 
 **Diagrama**
 ```mermaid
@@ -250,31 +250,31 @@ graph TD;
 
 **Descripción del Flujo:**
 
-Este flujo describe el proceso para que elimine un recurso en el sistema.
-1. **Accesso al panel de administracio**
-   - El Administrador debe inciar sesion para poder acceder al panel.
-   - La opcion para acceder al panel solo se muestra en el menu si la sesion es activa.
+Este flujo describe el proceso para que se elimine un recurso en el sistema.
+1. **Acceso al panel de administración**
+   - El Administrador debe iniciar sesión para poder acceder al panel.
+   - La opción para acceder al panel solo se muestra en el menú si la sesión es activa.
 2. **Mostrar el panel administrativo**
-   - El adminitrador accede al panel administrativo con una vista practiva y resumida de los recursos
+   - El administrador accede al panel administrativo con una vista práctica y resumida de los recursos
    - Visualiza la lista de recursos.
 3. **Eliminar un recurso**
-   - En la lista se encuentra la accion para eliminar  o  bloquear un recuro
-   - La accion de bloqueo siempre esta presente.
-   - La accion de eliminacion solo se muestra si ese recurso no tiene ninguna reserva activa y pagada asociada.
-4. **Mostrar mensaje de confirmacion**
-   - Se mostrar un mensaje para confirmar la accion en dos esenarios posibles.
-      - Si el recurso tiene almenos una reserva activa y pagada, se bloqueara el recurso para que nadie mas pueda reservarlo.
-      - Si no tiene ninguna reserva asociada se pedira confirmar la accion de eliminacion y se actualizara la base de datos
-   - En caso de cancelar la accion el mensaje solo se cerrara y no se guardara ningun cambio.
-5. **Proceso de eliminacion**
-   - Existe dos formas dependiendo el historial de reservas del recurso
-      - Si se reservo y pago almenos una vez, el estatus del recurso se cambia a eliminada.
-      - Si nunca se reservo y pago almenos una vez, se eliminara fisicamente de la base de datos.
-5. **Notificacion de cambios**
-   - El sistema notifica de la cancelacion de la reserva a todos los clientes donde los estatus fueran pendiente o autorizada .
-   - Tambien se mostrara un mesaje de confimacion de accion al administrador.
+   - En la lista se encuentra la acción para eliminar o bloquear un recurso
+   - La acción de bloqueo siempre está presente.
+   - La acción de eliminación solo se muestra si ese recurso no tiene ninguna reserva activa y pagada asociada.
+4. **Mostrar mensaje de confirmación**
+   - Se muestra un mensaje para confirmar la acción en dos escenarios posibles.
+      - Si el recurso tiene al menos una reserva activa y pagada, se bloqueará el recurso para que nadie más pueda reservarlo.
+      - Si no tiene ninguna reserva asociada se pedirá confirmar la acción de eliminación y se actualizará la base de datos
+   - En caso de cancelar la acción el mensaje solo se cerrará y no se guardará ningún cambio.
+5. **Proceso de eliminación**
+   - Existen dos formas dependiendo el historial de reservas del recurso
+      - Si se reservó y pagó al menos una vez, el estatus del recurso se cambia a eliminado.
+      - Si nunca se reservó y pagó al menos una vez, se eliminará físicamente de la base de datos.
+5. **Notificación de cambios**
+   - El sistema notifica de la cancelación de la reserva a todos los clientes donde los estatus fueran pendiente o autorizada.
+   - También se mostrará un mensaje de confirmación de acción al administrador.
 6. **Ocultar mensaje**
-   - Se cerrar el mensaje y se mostrar de nuevo el dashboard.
+   - Se cierra el mensaje y se muestra de nuevo el dashboard.
 
 **Diagrama**
 ```mermaid
