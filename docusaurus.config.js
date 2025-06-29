@@ -48,10 +48,8 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/jose-angell/EventReservationAppDocs',
         },
         blog: {
           showReadingTime: true,
@@ -62,7 +60,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/jose-angell/EventReservationAppDocs',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -92,6 +90,12 @@ const config = {
             sidebarId: 'tutorialSidebar',
             position: 'left',
             label: 'Documentación',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'backendSidebar',
+            position: 'left',
+            label: 'BackEnd',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
