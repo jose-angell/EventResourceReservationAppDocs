@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+title: Guia Creacion de Features
+---
 
 # 🛠 Guía para creación de nuevas Features (Backend)
 

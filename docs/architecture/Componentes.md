@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: Contenedores
+title: Componentes
 ---
 ## 3. Componentes del API (C4 – Nivel 3)
 
