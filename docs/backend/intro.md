@@ -2,9 +2,11 @@
 sidebar_position: 1
 title: Introduccion
 ---
+
 ## 🚀 Introducción al Backend
 
 Bienvenido a la documentación del **Backend** de ResourceReservationApp. Aquí encontrarás todo lo necesario para entender, evaluar y contribuir al servicio ASP.NET Core que expone la API de reservas.
+
 ---
 
 ### 1. ¿Qué encontrarás en esta carpeta?

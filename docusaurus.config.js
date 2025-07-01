@@ -97,6 +97,12 @@ const config = {
             position: 'left',
             label: 'BackEnd',
           },
+          {
+            type: 'docSidebar',
+            sidebarId: 'frondendSidebar',
+            position: 'left',
+            label: 'FrondEnd',
+          },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/jose-angell/EventReservationAppDocs',

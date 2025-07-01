@@ -5,6 +5,7 @@ title: Introduccion
 
 ## 🚀 Introducción al Frontend
 
+
 Este documento describe la aplicación cliente (Web SPA) de ResourceReservationApp. Aquí encontrarás las tecnologías, la estructura del proyecto y cómo navegar la documentación específica del frontend.
 
 ---
