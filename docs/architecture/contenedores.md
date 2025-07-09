@@ -2,7 +2,6 @@
 sidebar_position: 2
 title: Contenedores
 ---
-<!-- File: arquitectura/02-contenedores-c4.md -->
 
 # 2. Contenedores (C4 – Nivel 2)
 

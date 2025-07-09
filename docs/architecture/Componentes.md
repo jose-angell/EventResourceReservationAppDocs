@@ -4,15 +4,14 @@ title: Componentes
 ---
 ## 3. Componentes del API (C4 – Nivel 3)
 
-### 3.1 Descripción general  
-En este nivel descomponemos el contenedor **API REST** en sus piezas internas: controllers, casos de uso (UseCases), repositorios e integraciones con servicios externos.
-
+### 3.1 Descripción General 
+En este nivel de abstracción, desglosamos el contenedor principal de la API REST (tu aplicación ASP.NET Core) en sus **piezas internas clave o módulos principales**. Estos componentes, aunque lógicamente separados, se ejecutan dentro del mismo proceso y se comunican principalmente mediante llamadas a métodos (in-process).
 Cada componente:
-- Tiene una responsabilidad clara.  
-- Se ejecuta dentro del mismo proceso del API.  
-- Se comunica a través de llamadas a métodos (in-process), no HTTP.
+    - Tiene una **responsabilidad clara** y **específica**.
+    - Contribuye a la funcionalidad general del API.
+    - Interactúa con otros componentes a través de interfaces bien definidas.
 
-### 3.2 Módulos principales
+### 3.2 Módulos Principales y Responsabilidades
 
 | Módulo              | Controller                  | Use Cases (Application)                        | Infraestructura / Servicios externos          |
 |---------------------|-----------------------------|------------------------------------------------|-----------------------------------------------|

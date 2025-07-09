@@ -1,0 +1,8 @@
+{
+  "label": "adrs",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "A continuación los adrs (Architectural Decision Records) que se han tomado en el proyecto. Cada uno debe ir en su correspondiente carpeta -> 📂 Carpeta: `docs/backend/arquitectura/adrs/`"
+  }
+}
