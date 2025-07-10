@@ -10,7 +10,7 @@ Este documento define la entidad de dominio `Reservation`, sus propiedades, su p
 
 ---
 ### 1. Propósito de la Entidad
-La entidad Reservation representa la solicitud y confirmación de uso de uno o más recursos por parte de un cliente durante un período de tiempo específico. Es central para la funcionalidad de planificación y gestión de eventos de la aplicación, controlando la disponibilidad de recursos y el historial de uso.
+La entidad `Reservation` representa la solicitud y confirmación de uso de uno o más recursos por parte de un cliente durante un período de tiempo específico. Es central para la funcionalidad de planificación y gestión de eventos de la aplicación, controlando la disponibilidad de recursos y el historial de uso.
 
 ---
 ### 2. Propiedades y Atributos
@@ -34,6 +34,8 @@ A continuación, se detallan las propiedades de la entidad `Reservation`, incluy
 | `TransaccionId` | `UUID` (o `int`, opcional) | Clave foránea (`FK`) a la entidad Transaction (`Pago`) que relaciona el pago de la reserva (puede ser nulo).  |
 
 ---
+### 3. Diagrama de Entidad-Relación (ERD)
+Este diagrama visualiza la estructura de la entidad `Reservation` y sus relaciones clave con otras entidades en el modelo de dominio.
 
 ```mermaid
 erDiagram
