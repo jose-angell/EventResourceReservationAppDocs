@@ -13,6 +13,11 @@ Este documento define la entidad de dominio `Transaction`, sus propiedades, su p
 ### 1. Propósito de la Entidad
 La entidad `Transaction` representa el registro de un intento o confirmación de pago dentro del sistema. Su propósito principal es rastrear el estado financiero de una reserva, sirviendo como un vínculo crucial con la pasarela de pago externa. Permite auditar los pagos, gestionar reembolsos, y asegurar que cada reserva tenga un historial financiero claro, independientemente del proveedor de pago externo.
 
+---
+
+### 2. Propiedades y Atributos
+A continuación, se detallan las propiedades de la entidad `Transaction`, incluyendo su tipo de dato conceptual y una descripción clara de su propósito.
+
 | Propiedades | Tipo de Dato (conceptual) | Descripción |
 |-------------|---------------------------|-------------|
 |`Id`| `UUID` (o `int` si es identidad generada por DB) | Identificador único de la transacción en tu sistema.|
@@ -27,12 +32,6 @@ La entidad `Transaction` representa el registro de un intento o confirmación de
 |`MetodoPago` | `Enum` (`int` o `string`, opcional)|Método de pago utilizado (ej., `TarjetaCredito`, `PayPal`, `TransferenciaBancaria`).|
 |`DetallesPasarela` | `string` (`JSON` o `texto`, opcional) | Información adicional estructurada (JSON) o texto plano recibida de la pasarela de pago (ej., `códigos de error`, `mensajes de confirmación`).|
 |`FechaUltimaActualizacion` | `DateTime` | Marca de tiempo de la última actualización del estado de la transacción.|
-
----
-
-### 2. Propiedades y Atributos
-A continuación, se detallan las propiedades de la entidad `Transaction`, incluyendo su tipo de dato conceptual y una descripción clara de su propósito.
-
 
 ---
 
