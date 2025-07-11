@@ -20,12 +20,12 @@ A continuación, se detallan las propiedades de la entidad `Resource`, incluyend
 |-------------|---------------------------|-------------|
 | `Id`  | `UUID` (o `int` si es identidad generada por DB) | Identificador único  para cada recurso. |
 | `CategoryId` | `UUID` (o `int`) |  Clave foránea (`FK`) a la entidad `Category`, indicando a qué categoria pertenece este recurso. |
-| `EstadoId` | `int` (o `Enum`) | Clave foránea (`FK`) a la entidad StatusResource (o valor de enum), relacionando el estado actual del recurso (ej. `Disponible`, `Bloqueado`, `FueraDeServicio`, `Eliminado`).|
+| `EstadoId` | `int` (o `Enum`) | Clave foránea (`FK`) a la entidad `StatusResource` (o valor de enum), relacionando el estado actual del recurso (ej. `Disponible`, `Bloqueado`, `FueraDeServicio`, `Eliminado`).|
 | `Nombre` | `string` | Nombre corto o título identificador del recurso. |
 | `Descripcion` |  `string` |  Descripción detallada del recurso, sus características o funcionalidades.|
 | `CantidadDisponible` |  `int` |  Número de unidades de este recurso que están actualmente disponibles para ser reservadas. |
 | `PrecioUnitario` |  `Decimal`(`numeric`) | Precio por una unidad de este recurso al momento de la consulta.|
-| `TipoAutorizacion` |  `Enum` (`int` o `string`) |  Define si la reserva de este recurso se autoriza automáticamente o requiere revisión y aprobación manual por un administrador. |
+| `TipoAutorizacion` |  `Enum` (`int`) |   Define si la reserva de este recurso se autoriza automáticamente o requiere revisión y aprobación manual por un administrador. Los valores posibles se definen en el `enum TypeAuthorization` en el código (ej. `automatico=1`, `manual=2`).|
 | `DireccionId` |  `UUID` (o `int`) | Clave foránea (`FK`) a la entidad `Location` (`Direccion`) donde se almacena el recurso.|
 | `UsuarioCreacionId` | `UUID` (o `int`) | Clave foránea (`FK`) a la entidad `User` (`Usuario`) quien realiza el registro de la direccion.|
 | `FechaCreacion` | `DateTime` | Marca de tiempo que registra cuándo se creó la reserva. |

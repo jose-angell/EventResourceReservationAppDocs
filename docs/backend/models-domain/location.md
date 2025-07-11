@@ -20,7 +20,7 @@ A continuación, se detallan las propiedades de la entidad `Location`, incluyend
 
 | Propiedades | Tipo de Dato (conceptual) | Descripción |
 |-------------|---------------------------|-------------|
-| `Id`  | `UUID` (o `int` si es identidad generada por DB) | Identificador único de la reserva |
+| `Id`  | `UUID` (o `int` si es identidad generada por DB) | Identificador único de la dirección |
 | `Pais` | `string` | País donde se entregarán los recursos de la reserva o donde se almacenan los recursos |
 | `Ciudad` | `string` | Ciudad donde se ubicará el evento o donde se almacenan los recursos|
 | `CodigoPostal` | `int` (o `int` si solo numérico) | CCódigo postal de la ubicación registrada. Considerar string para formatos flexibles (ej. alfanuméricos)|
