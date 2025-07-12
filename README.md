@@ -1,164 +1,118 @@
-# Guía Completa para Configurar y Desplegar Docusaurus en GitHub Pages
+# 🚀 Event Reservation App - Documentación Centralizada
 
-Esta guía te llevará paso a paso desde la creación del proyecto en Docusaurus hasta su despliegue en GitHub Pages, incluyendo la creación manual de la rama `gh-pages`.
+¡Bienvenido al repositorio de documentación centralizada para la **Aplicación de Reserva de Recursos para Eventos**!
 
----
-
-## 1. Pre-requisitos
-
-- **Node.js** (versión 16 o superior) y **npm** o **Yarn**.
-- **Git** instalado en tu sistema.
-- Una **cuenta de GitHub**.
+Este proyecto personal está diseñado para mi portafolio y tiene como objetivo demostrar la capacidad de construir una aplicación completa, desde el frontend hasta el backend, con una sólida base de documentación.
 
 ---
 
-## 2. Crear el Proyecto Docusaurus
+## 🎯 Visión General del Proyecto
 
-Abre la terminal y ejecuta:
+La `Event Reservation App` es una aplicación que permite a los usuarios **reservar recursos** (como salas, equipos, personal, etc.) para diferentes tipos de eventos. Está pensada para ser una solución integral que simplifique la gestión y disponibilidad de estos recursos.
+
+### Arquitectura General
+
+El proyecto está modularizado en **tres repositorios principales** para una mejor gestión, escalabilidad y separación de responsabilidades:
+
+1.  **Frontend (`React`):** La interfaz de usuario intuitiva para la interacción con la aplicación.
+2.  **Backend (`.NET`):** La lógica de negocio y la API que gestiona las operaciones de reserva.
+3.  **Documentación (`Docusaurus`):** Este mismo repositorio, que actúa como el centro de conocimiento del proyecto.
+
+---
+
+## 📂 Estructura de Repositorios
+
+A continuación, puedes encontrar los enlaces directos a cada componente del proyecto:
+
+* **[EventReservationAppFrontend](https://github.com/jose-angell/EventReservationAppFrontend)**
+    * **Tecnología:** React
+    * **Descripción:** Contiene el código fuente de la interfaz de usuario, los componentes y la lógica de presentación.
+* **[EventReservationAppBackend](https://github.com/jose-angell/EventReservationAppBackend)**
+    * **Tecnología:** .NET
+    * **Descripción:** Contiene la API RESTful, la lógica de negocio, la conexión a la base de datos y la autenticación.
+* **[EventReservationAppDocs](https://github.com/jose-angell/EventReservationAppDocs)** (¡Estás aquí!)
+    * **Tecnología:** Docusaurus
+    * **Descripción:** Centro de documentación, guías de contribución, arquitectura, planificación y detalles técnicos.
+
+---
+
+## 📖 Navegando por la Documentación
+
+Este repositorio utiliza **Docusaurus** para generar un sitio web de documentación interactivo y fácil de navegar. Aquí encontrarás:
+
+* **Introducción al Proyecto:** Objetivos, alcance y tecnologías utilizadas.
+* **Guías de Configuración:** Cómo poner en marcha el frontend y el backend localmente.
+* **Diagramas de Arquitectura:** Visualizaciones de la estructura del sistema y los flujos de datos.
+* **Documentación de la API:** Detalles de los endpoints del backend, peticiones y respuestas.
+* **Guías de Contribución:** Normas de estilo de código, proceso de Pull Requests y cómo colaborar.
+* **Decisiones de Diseño:** Explicación de las elecciones tecnológicas y arquitectónicas.
+* **Roadmap:** Próximas funcionalidades y planificación a futuro.
+
+---
+
+### Cómo Acceder a la Documentación Completa
+
+Puedes acceder al sitio de documentación publicado en GitHub Pages a través del siguiente enlace:
+
+🔗 **[Visitar la Documentación](https://jose-angell.github.io/EventReservationAppDocs/)**
+
+---
+
+## 🤝 Contribución
+
+¡Las contribuciones son bienvenidas! Si deseas colaborar con el desarrollo de la aplicación o mejorar la documentación, por favor, consulta nuestras **[Guías de Contribución](docs/contributing.md)** *(o el path que decidas dentro de Docusaurus)*.
+
+### ¿Cómo contribuir a la documentación de Docusaurus?
+
+Si necesitas modificar o añadir contenido a este sitio de documentación, sigue estos pasos:
+
+#### Pre-requisitos para Desarrollar Docusaurus
+
+* **Node.js** (versión 16 o superior) y **npm** o **Yarn**.
+* **Git** instalado en tu sistema.
+* Una **cuenta de GitHub**.
+
+
+#### Configuración Local de Docusaurus
+
+1.  **Clonar el repositorio:**
+    ```bash
+    git clone [https://github.com/jose-angell/EventReservationAppDocs.git](https://github.com/jose-angell/EventReservationAppDocs.git)
+    cd EventReservationAppDocs
+    ```
+2.  **Instalar dependencias:**
+    ```bash
+    npm install # o yarn install
+    ```
+3.  **Iniciar el servidor de desarrollo:**
+    ```bash
+    npm run start
+    ```
+    Accede a `http://localhost:3000/EventReservationAppDocs/` para ver el sitio.
+
+#### Despliegue en GitHub Pages
+
+Para desplegar los cambios en el sitio público de GitHub Pages, utiliza el script de despliegue de Docusaurus:
 
 ```bash
-npx create-docusaurus@latest mi-documentacion classic
-```
-Esto creará una carpeta llamada mi-documentacion con la estructura básica de Docusaurus. Luego, ingresa al directorio:
-
-```
-cd mi-documentacion
+$env:GIT_USER = "tu-usuario-de-github"; npm run deploy
 ```
 
-3. Configurar docusaurus.config.js
-Abre el archivo docusaurus.config.js y edita las siguientes propiedades según corresponda:
+> (Asegúrate de reemplazar "tu-usuario-de-github" con tu nombre de usuario de GitHub.)
 
-- url: La URL base de tu GitHub Pages.
+Este comando generará el sitio estático y lo subirá a la rama gh-pages de este repositorio.
 
-- baseUrl: La subruta donde se alojará tu sitio (incluye barra al inicio y al final).
+---
+✨ Tecnologías Utilizadas
+  - Frontend: React
+  - Backend: .NET
+  - Documentación: Docusaurus, Markdown, Mermaid (para diagramas)
+  - Control de Versiones: Git, GitHub
 
-- organizationName: Tu usuario u organización en GitHub.
+---
 
-- projectName: El nombre de tu repositorio.
+### 📧 Contacto
+Para cualquier pregunta o sugerencia, no dudes en abrir un Issue en GitHub o contactarme directamente a través de **gallardocordovajoseangel@gmail.com**.
 
-Ejemplo de configuración:
+---
 
-``` js
-module.exports = {
-  title: 'Mi Documentación',
-  tagline: 'Documentación de ejemplo con Docusaurus',
-  url: 'https://tu-usuario.github.io', // Reemplaza "tu-usuario" según corresponda
-  baseUrl: '/mi-documentacion/',         // Debe coincidir con el nombre de tu repositorio
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
-
-  organizationName: 'tu-usuario',   // Usuario o organización de GitHub
-  projectName: 'mi-documentacion',   // Nombre del repositorio en GitHub
-
-  // Otras configuraciones...
-};
-
-```
-
-4. Probar el Sitio Localmente
-Modo Desarrollo
-Inicia el servidor de desarrollo:
-
-```
-npm run start
-```
-
-Accede a http://localhost:3000/mi-documentacion/ para ver el sitio (recuerda usar la ruta que incluya el baseUrl).
-
-Generar Build para Producción
-Construye el sitio y pruébalo localmente:
-```
-npm run build
-npm run serve
-```
-
-5. Configurar el Repositorio en GitHub
-Inicializar Git y Hacer el Primer Commit
-
-```
-git init
-git add .
-git commit -m "Primer commit: configuración inicial de Docusaurus"
-```
-
-Crear el Repositorio en GitHub
-1.  Ve a GitHub y crea un nuevo repositorio llamado, por ejemplo, mi-documentacion.
-
-Vincular el Repositorio Remoto y Subir el Código
-
-```
-git remote add origin https://github.com/tu-usuario/mi-documentacion.git
-git branch -M main
-git push -u origin main
-```
-Reemplaza tu-usuario y mi-documentacion con tus datos.
-
-6. Crear Manualmente la Rama gh-pages
-Docusaurus utiliza la rama gh-pages para almacenar el sitio estático. Si aún no existe en el remoto, créala manualmente:
-
-1. Crear una rama huérfana llamada gh-pages:
-``` 
-git checkout --orphan gh-pages
- ```
-2. Eliminar todos los archivos existentes:
-``` 
-git rm -rf .
-```
-3. Crear el archivo .nojekyll:
-
-Para evitar que GitHub Pages procese el contenido con Jekyll, crea un archivo vacío llamado .nojekyll:
-```
-echo "" > .nojekyll
-git add .nojekyll
-git commit -m "Inicializar rama gh-pages"
-```
-
-4. Subir la rama gh-pages al repositorio remoto:
-```
-git push origin gh-pages
-```
-5. Volver a la rama principal:
-```
-git checkout main
-```
-
-7. Desplegar el Sitio en GitHub Pages
-Docusaurus provee un script de despliegue para generar el build y subirlo a la rama gh-pages.
-
-Ejecuta:
-```
- $env:GIT_USER = "user-name"; npm run deploy
-```
-
-El comando hará lo siguiente:
-
-- Generará el build (carpeta build).
-
-- Clonará la rama gh-pages desde el remoto.
-
-- Actualizará el contenido con el resultado del build.
-
-Una vez completado, tu sitio estará disponible en:
-```
-https://tu-usuario.github.io/mi-documentacion/
-```
-
-Espera unos minutos para que GitHub Pages actualice el contenido.
-
-
-### Agregar Diagragas
-1. Instalar el plugin:
-```
-npm install --save @docusaurus/theme-mermaid
-```
-
-2. Habilitar Mermaid en la configuración En tu archivo ```docusaurus.config.js```, agrega:
-
-```
-export default {
-  markdown: { mermaid: true },
-  themes: ['@docusaurus/theme-mermaid'],
-};
-
-```
