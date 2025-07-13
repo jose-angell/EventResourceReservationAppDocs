@@ -10,7 +10,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'EventReservationAppDocs',
+  title: 'EventResourceReservationAppDocs',
   tagline: 'Documentacion para el proyecto de Reserva',
   favicon: 'img/logoBookIt.svg',
 
@@ -23,12 +23,12 @@ const config = {
   url: 'https://jose-angell.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/EventReservationAppDocs/',
+  baseUrl: '/EventResourceReservationAppDocs/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'jose-angell', // Usually your GitHub org/user name.
-  projectName: 'EventReservationAppDocs', // Usually your repo name.
+  projectName: 'EventResourceReservationAppDocs', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -49,7 +49,7 @@ const config = {
         docs: {
           sidebarPath: './sidebars.js',
           editUrl:
-            'https://github.com/jose-angell/EventReservationAppDocs',
+            'https://github.com/jose-angell/EventResourceReservationAppDocs',
         },
         blog: {
           showReadingTime: true,
@@ -60,7 +60,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/jose-angell/EventReservationAppDocs',
+            'https://github.com/jose-angell/EventResourceReservationAppDocs',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -105,7 +105,7 @@ const config = {
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/jose-angell/EventReservationAppDocs',
+            href: 'https://github.com/jose-angell/EventResourceReservationAppDocs',
             label: 'GitHub',
             position: 'right',
           },

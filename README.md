@@ -1,4 +1,4 @@
-# 🚀 Event Reservation App - Documentación Centralizada
+# 🚀 Event Resource Reservation App - Documentación Centralizada
 
 ¡Bienvenido al repositorio de documentación centralizada para la **Aplicación de Reserva de Recursos para Eventos**!
 
@@ -24,13 +24,13 @@ El proyecto está modularizado en **tres repositorios principales** para una mej
 
 A continuación, puedes encontrar los enlaces directos a cada componente del proyecto:
 
-* **[EventReservationAppFrontend](https://github.com/jose-angell/EventReservationAppFrontend)**
+* **[EventResourceReservationAppFrontend](https://github.com/jose-angell/EventResourceReservationAppFrontend)**
     * **Tecnología:** React
     * **Descripción:** Contiene el código fuente de la interfaz de usuario, los componentes y la lógica de presentación.
-* **[EventReservationAppBackend](https://github.com/jose-angell/EventReservationAppBackend)**
+* **[EventResourceReservationAppBackend](https://github.com/jose-angell/EventResourceReservationAppBackend)**
     * **Tecnología:** .NET
     * **Descripción:** Contiene la API RESTful, la lógica de negocio, la conexión a la base de datos y la autenticación.
-* **[EventReservationAppDocs](https://github.com/jose-angell/EventReservationAppDocs)** (¡Estás aquí!)
+* **[EventResourceReservationAppDocs](https://github.com/jose-angell/EventResourceReservationAppDocs)** (¡Estás aquí!)
     * **Tecnología:** Docusaurus
     * **Descripción:** Centro de documentación, guías de contribución, arquitectura, planificación y detalles técnicos.
 
@@ -54,7 +54,7 @@ Este repositorio utiliza **Docusaurus** para generar un sitio web de documentaci
 
 Puedes acceder al sitio de documentación publicado en GitHub Pages a través del siguiente enlace:
 
-🔗 **[Visitar la Documentación](https://jose-angell.github.io/EventReservationAppDocs/)**
+🔗 **[Visitar la Documentación](https://jose-angell.github.io/EventResourceReservationAppDocs/)**
 
 ---
 
@@ -77,8 +77,8 @@ Si necesitas modificar o añadir contenido a este sitio de documentación, sigue
 
 1.  **Clonar el repositorio:**
     ```bash
-    git clone [https://github.com/jose-angell/EventReservationAppDocs.git](https://github.com/jose-angell/EventReservationAppDocs.git)
-    cd EventReservationAppDocs
+    git clone [https://github.com/jose-angell/EventResourceReservationAppDocs.git](https://github.com/jose-angell/EventResourceReservationAppDocs.git)
+    cd EventResourceReservationAppDocs
     ```
 2.  **Instalar dependencias:**
     ```bash
@@ -88,7 +88,7 @@ Si necesitas modificar o añadir contenido a este sitio de documentación, sigue
     ```bash
     npm run start
     ```
-    Accede a `http://localhost:3000/EventReservationAppDocs/` para ver el sitio.
+    Accede a `http://localhost:3000/EventResourceReservationAppDocs/` para ver el sitio.
 
 #### Despliegue en GitHub Pages
 
