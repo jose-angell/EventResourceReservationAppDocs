@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkevent_reservation_app_docs=self.webpackChunkevent_reservation_app_docs||[]).push([[9832],{2589:e=>{e.exports=JSON.parse('{"metadata":{"permalink":"/EventResourceReservationAppDocs/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
