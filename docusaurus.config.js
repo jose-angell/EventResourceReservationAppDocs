@@ -79,7 +79,7 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'Event Reservation App',
+        title: 'Event Resource Reservation App',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logoBookIt.svg',
