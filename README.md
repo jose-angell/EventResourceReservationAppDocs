@@ -8,7 +8,7 @@ Este proyecto personal está diseñado para mi portafolio y tiene como objetivo 
 
 ## 🎯 Visión General del Proyecto
 
-La `Event Reservation App` es una aplicación que permite a los usuarios **reservar recursos** (como salas, equipos, personal, etc.) para diferentes tipos de eventos. Está pensada para ser una solución integral que simplifique la gestión y disponibilidad de estos recursos.
+La `Event Resource Reservation App` es una aplicación que permite a los usuarios **reservar recursos** (como salas, equipos, personal, etc.) para diferentes tipos de eventos. Está pensada para ser una solución integral que simplifique la gestión y disponibilidad de estos recursos.
 
 ### Arquitectura General
 

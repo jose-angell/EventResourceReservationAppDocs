@@ -1,8 +1,8 @@
 {
   "label": "Modelos de Dominio",
-  "position": 3,
+  "position": 5,
   "link": {
     "type": "generated-index",
-    "description": "A continuación se muestra un esquema preliminar de las entidades y sus relaciones:"
+    "description": "A continuación se muestra un esquema detallado de las entidades y sus relaciones:"
   }
 }

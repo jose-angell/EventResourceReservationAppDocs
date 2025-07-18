@@ -5,7 +5,7 @@ title: Introduccion
 
 ## 🚀 Introducción al Backend
 
-¡Bienvenido a la documentación del **Backend** de **ResourceReservationApp**! Aquí encontrarás todo lo necesario para entender, evaluar y contribuir al servicio **ASP.NET Core** que expone la API de reservas.
+¡Bienvenido a la documentación del **Backend** de **EventResourceReservationApp**! Aquí encontrarás todo lo necesario para entender, evaluar y contribuir al servicio **ASP.NET Core** que expone la API de reservas.
 
 ---
 
@@ -27,10 +27,12 @@ La carpeta `backend/` de este repositorio es el hogar de esta documentación "vi
 .
 └─ backend/
    ├─ arquitectura/            # Diagramas y ADRs
+   ├─ setup.md                 # Guía detallada para clonar e iniciar el proyecto de forma local
    ├─ DecisionsTecnicas.md     # Explicación del porqué de nuestras elecciones
    ├─ Features/                # Especificaciones detalladas de cada funcionalidad
    ├─ Introduccion.md          # Este archivo
    ├─ Guia-de-convenciones.md  # Guías de estilo y patrones de desarrollo
+   ├─ models-domain/           # Especificaciones de las entidades dentro de la aplicación
    └─ ops/                     # Scripts de despliegue y operaciones
 ```
 
