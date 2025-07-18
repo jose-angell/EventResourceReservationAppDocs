@@ -1,3 +1,8 @@
+---
+sidebar_position: 7
+title:  Docusaurus setup
+---
+
 # Guía Completa y detallada para la crear, Configurar y Desplegar Docusaurus para documentar un proyecto(en GitHub Pages)
 
 Esta guía te llevará paso a paso desde la creación del proyecto en Docusaurus hasta su despliegue en GitHub Pages, incluyendo la creación manual de la rama `gh-pages`.
