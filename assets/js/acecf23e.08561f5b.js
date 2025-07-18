@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkevent_reservation_app_docs=self.webpackChunkevent_reservation_app_docs||[]).push([[1903],{1912:e=>{e.exports=JSON.parse('{"blogBasePath":"/EventResourceReservationAppDocs/blog","blogTitle":"Blog","authorsListPath":"/EventResourceReservationAppDocs/blog/authors"}')}}]);

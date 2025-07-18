@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkevent_reservation_app_docs=self.webpackChunkevent_reservation_app_docs||[]).push([[9495],{9495:(e,s,a)=>{a.d(s,{createPieServices:()=>r.f});var r=a(9732);a(3579)}}]);
