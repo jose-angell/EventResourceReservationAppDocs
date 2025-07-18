@@ -147,5 +147,5 @@ Si tienes alguna pregunta o sugerencia, no dudes en contactarme:
 
 - **Tu Nombre**
 - **Email:** gallardocordovajoseangel@gmail.com
-- **LinkedIn:** [Jose Angel](www.linkedin.com/in/jose-angel-gallardo-cordova-05a347365)
+- **LinkedIn:** [Jose Angel](https://www.linkedin.com/in/jose-angel-gallardo-cordova-05a347365)
 - **GitHub:** [jose-angell](https://github.com/jose-angell)
