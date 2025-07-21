@@ -72,7 +72,7 @@ Este proyecto utiliza Docker Compose para levantar y gestionar la base de datos 
 3.  **Aplicar Migraciones de Entity Framework Core:**
     Una vez que el contenedor de la base de datos esté levantado y disponible (dale unos segundos después del `docker-compose up`), necesitas aplicar las migraciones de Entity Framework Core para crear el esquema de la base de datos y/o sembrar datos iniciales.
 
-    Navega a la carpeta de tu proyecto de backend (donde se encuentra el archivo `.csproj` principal de tu API, por ejemplo, `src/EventResourceReservationAppBackend.Api`).
+    Navega a la carpeta de tu proyecto de backend (donde se encuentra el archivo `.csproj` principal de tu API, por ejemplo, `src/EventResourceReservationAppBackend.Infrastructure`).
     ```bash
     cd src/EventResourceReservationAppBackend.Api # Ajusta esta ruta si tu .csproj está en otro lugar
     ```
@@ -80,9 +80,9 @@ Este proyecto utiliza Docker Compose para levantar y gestionar la base de datos 
     ```bash
     dotnet ef database update
     ```
-    Si tienes múltiples proyectos en tu solución o si el comando anterior no funciona, podrías necesitar especificar el proyecto de inicio o el contexto de la base de datos:
+    si el comando anterior no funciona, podrías necesitar especificar el proyecto de inicio o el contexto de la base de datos:
     ```bash
-    dotnet ef database update --project EventResourceReservationAppBackend.Api --startup-project EventResourceReservationAppBackend.Api # Reemplaza con los nombres reales de tu proyecto
+    dotnet ef database update --project EventResourceReservationAppBackend.Infrastructure --startup-project EventResourceReservationAppBackend.Infrastructure
     ```
     *Este comando conectará tu aplicación .NET local al contenedor de PostgreSQL y aplicará las migraciones pendientes, creando la base de datos y sus tablas.*
 
@@ -123,7 +123,7 @@ Una vez configurada la base de datos y la cadena de conexión:
     ```bash
     dotnet run --project EventResourceReservationAppBackend
     ```
-La API se iniciará y estará disponible en `http://localhost:XXXX`.
+La API se iniciará y estará disponible en `http://localhost:50003`.
 
 Alternativamente, puedes ejecutar el proyecto usando Visual Studio: abre la solución (.sln) y presiona `F5` o el botón "Ejecutar".
 
