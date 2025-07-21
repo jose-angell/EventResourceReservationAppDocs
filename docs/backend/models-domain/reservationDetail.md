@@ -22,8 +22,8 @@ A continuación, se detallan las propiedades de la entidad `ReservationDetail`, 
 | `Id`  | `UUID` (o `int` si es identidad generada por DB) | Identificador único del detalle de la reserva |
 | `ReservationId` | `UUID` (o `int`) |  Clave foránea (`FK`) a la entidad `Reservation`, indicando a qué reserva pertenece este detalle. |
 | `ResourceId` | `UUID` (o `int`) | Clave foránea (`FK`) a la entidad `Resource`, identificando el recurso específico que se reservó.|
-| `Cantidad` | `int` | Número de unidades de este recurso específico incluidas en la reserva. |
-| `PrecioUnitario` |  `Decimal`(`numeric`) |  Precio por unidad del recurso en el momento exacto en que se realizó la reserva. |
+| `Quantity` | `int` | Número de unidades de este recurso específico incluidas en la reserva. |
+| `UnitPrice` |  `Decimal`(`numeric`) |  Precio por unidad del recurso en el momento exacto en que se realizó la reserva. |
 
 ---
 
@@ -34,24 +34,24 @@ Este diagrama visualiza la estructura de la entidad `ReservationDetail` y sus re
 erDiagram
     Reservation {
         UUID Id PK
-        datetime Fecha
-        datetime HoraInicio
-        datetime HoraFin
+        datetime Date
+        datetime StartTime
+        datetime EndTime
     }
     
     Resource {
         UUID Id PK
-        string Nombre
-        string Tipo
-        int Capacidad
+        string Name
+        string Type
+        int Capacity
     }
 
     ReservationDetail {
         UUID Id PK
         UUID ReservationId FK "Reservation.Id"
         UUID ResourceId FK "Resource.Id"
-        int Cantidad
-        decimal PrecioUnitario
+        int Quantity
+        decimal UnitPrice
     }
     
     Reservation ||--o{ ReservationDetail : "tiene_detalle_de_recurso"

@@ -21,10 +21,10 @@ A continuación, se detallan las propiedades de la entidad Category, incluyendo 
 | Propiedades | Tipo de Dato (conceptual) | Descripción |
 |-------------|---------------------------|-------------|
 |`Id`  | `UUID` (o `int` si es identidad generada por DB) | Identificador único  para cada categoría de recurso.|
-|`Nombre` | `string` | Nombre único y descriptivo de la categoría (ej., "Salas de Reuniones", "Equipos de Proyección").|
-|`Descripcion` | `string` | Descripción detallada que explica el tipo de recursos que abarca esta categoría.|
-| `UsuarioCreacionId` | `UUID` (o `int`) | Clave foránea (`FK`) a la entidad `User` (`Usuario`) quien realizó el registro inicial de esta categoría.|
-|`FechaCreacion` | `DateTime` | Marca de tiempo que registra cuándo se creó la entrada de la categoría.|
+|`Name` | `string` | Nombre único y descriptivo de la categoría (ej., "Salas de Reuniones", "Equipos de Proyección").|
+|`Description` | `string` | Descripción detallada que explica el tipo de recursos que abarca esta categoría.|
+|`CreatedByUserId` | `UUID` (o `int`) | Clave foránea (`FK`) a la entidad `User` (`Usuario`) quien realizó el registro inicial de esta categoría.|
+|`CreatedAt` | `DateTime` | Marca de tiempo que registra cuándo se creó la entrada de la categoría.|
 
 ---
 

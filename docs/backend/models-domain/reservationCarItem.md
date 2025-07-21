@@ -21,8 +21,8 @@ A continuación, se detallan las propiedades de la entidad `ReservationCarItem`,
 |-------------|---------------------------|-------------|
 |`ClienteId` | `UUID` (o `int`)   | Parte de la Clave Primaria. Clave foránea (FK) a la entidad User (Cliente), identificando al usuario propietario de este ítem del carrito. |
 | `ResourceId` | `UUID` (o `int`) | Parte de la Clave Primaria. Clave foránea (FK) a la entidad Resource, identificando el recurso específico que se desea reservar.|
-| `Cantidad` | `int` | Número de unidades de este recurso específico incluidas en la reserva. |
-|`FechaAdicion`| `DateTime` | Marca de tiempo que registra cuándo se añadió o actualizó por última vez este recurso al carrito del usuario. |
+| `Quantity` | `int` | Número de unidades de este recurso específico incluidas en la reserva. |
+|`AddedAt`| `DateTime` | Marca de tiempo que registra cuándo se añadió o actualizó por última vez este recurso al carrito del usuario. |
 
 **Nota Importante:** En este diseño, la combinación de ClienteId y ResourceId forma la clave primaria compuesta de esta tabla, asegurando que un mismo cliente no pueda tener el mismo ResourceId duplicado en su carrito. Si el cliente añade el mismo recurso, se actualizará la Cantidad.
 
@@ -36,24 +36,24 @@ Este diagrama visualiza la estructura de la entidad `ReservationCarItem` y sus r
 erDiagram
     Resource {
         UUID Id PK
-        string Nombre
-        string Tipo
-        int Capacidad
+        string Name
+        string Type
+        int Capacity
     }
     ReservationCarItem {
         UUID Id PK
         UUID RecursoId FK "Resource.Id"
-        int Cantidad
         UUID ClienteId FK "User.Id"
-        DateTime FechaAdicion
+        int Quantity
+        datetime AddedAt
     }
     User {
         UUID Id PK
-        string Nombre
+        string FirstName
         string Email
     }
-    User ||--o{ ReservationCarItem : "posee"
-    Resource ||--o{ ReservationCarItem : "incluye recurso"
+    User ||--o{ ReservationCarItem : "posee_items_en_carrito"
+    Resource ||--o{ ReservationCarItem : "incluido_en_carrito"
 
 
 ```

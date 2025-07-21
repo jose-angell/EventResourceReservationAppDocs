@@ -23,15 +23,15 @@ A continuación, se detallan las propiedades de la entidad `Transaction`, incluy
 |`Id`| `UUID` (o `int` si es identidad generada por DB) | Identificador único de la transacción en tu sistema.|
 |`ReservationId` | `UUID` (o `int`) | Clave foránea (FK) a la entidad Reservation, indicando la reserva a la que se asocia este pago.|
 |`ClienteId` | `UUID` (o `int`) | Clave foránea (FK) a la entidad User (Cliente) que inició la transacción.|
-|`Monto` | `Decimal` (`numeric`) |Cantidad total de dinero de la transacción.|
-|`Moneda` | `string` (`char(3)`) | Código `ISO 4217` de la moneda utilizada (ej., "MXN", "USD").|
-|`EstadoTransaccion` | `Enum` (`int` o `string`) | Estado actual de la transacción (ej., Pendiente, `Completada`, `Fallida`, `Reembolsada`).|
-|`TipoTransaccion` | `Enum` (`int` o `string`) | Tipo de operación de la transacción (ej., `Pago`, `Reembolso`, `CargoRecurrente`).|
-|`FechaTransaccion` | `DateTime` | Marca de tiempo exacta cuando se inició la transacción en tu sistema.|
-|`IdTransaccionPasarela` | `string` (opcional) | Identificador único de la transacción devuelto por la pasarela de pago externa. Crucial para referencias y conciliación.|
-|`MetodoPago` | `Enum` (`int` o `string`, opcional)|Método de pago utilizado (ej., `TarjetaCredito`, `PayPal`, `TransferenciaBancaria`).|
-|`DetallesPasarela` | `string` (`JSON` o `texto`, opcional) | Información adicional estructurada (JSON) o texto plano recibida de la pasarela de pago (ej., `códigos de error`, `mensajes de confirmación`).|
-|`FechaUltimaActualizacion` | `DateTime` | Marca de tiempo de la última actualización del estado de la transacción.|
+|`Amount` | `Decimal` (`numeric`) |Cantidad total de dinero de la transacción.|
+|`Currency` | `string` (`char(3)`) | Código `ISO 4217` de la moneda utilizada (ej., "MXN", "USD").|
+|`TransactionStatus` | `Enum` (`int` o `string`) | Estado actual de la transacción (ej., Pendiente, `Completada`, `Fallida`, `Reembolsada`).|
+|`TransactionType` | `Enum` (`int` o `string`) | Tipo de operación de la transacción (ej., `Pago`, `Reembolso`, `CargoRecurrente`).|
+|`TransactionDate` | `DateTime` | Marca de tiempo exacta cuando se inició la transacción en tu sistema.|
+|`GatewayTransactionId` | `string` (opcional) | Identificador único de la transacción devuelto por la pasarela de pago externa. Crucial para referencias y conciliación.|
+|`PaymentMethod` | `Enum` (`int` o `string`, opcional)|Método de pago utilizado (ej., `TarjetaCredito`, `PayPal`, `TransferenciaBancaria`).|
+|`GatewayDetails` | `string` (`JSON` o `texto`, opcional) | Información adicional estructurada (JSON) o texto plano recibida de la pasarela de pago (ej., `códigos de error`, `mensajes de confirmación`).|
+|`LastUpdatedAt` | `DateTime` | Marca de tiempo de la última actualización del estado de la transacción.|
 
 ---
 
@@ -42,44 +42,44 @@ Este diagrama visualiza la estructura de la entidad Transaction y sus relaciones
 erDiagram
     Reservation {
         UUID Id PK
-        datetime Fecha
-        datetime HoraInicio
+        datetime Date
+        datetime StartTime
     }
 
     User {
         UUID Id PK
-        string Nombre
+        string FirstName
         string Email
     }
 
     TransactionStatus {
         int Id PK
-        string NombreEstado
+        string StatusName
     }
 
     TransactionType {
         int Id PK
-        string NombreTipo
+        string TypeName
     }
 
     PaymentMethod {
         int Id PK
-        string NombreMetodo
+        string MethodName
     }
 
     Transaction {
         UUID Id PK
         UUID ReservationId FK "Reservation.Id"
         UUID ClienteId FK "User.Id"
-        decimal Monto
-        string Moneda
-        int EstadoTransaccion FK "TransactionStatus.Id"
-        int TipoTransaccion FK "TransactionType.Id"
-        datetime FechaTransaccion
-        string IdTransaccionPasarela
-        int MetodoPago FK "PaymentMethod.Id"
-        string DetallesPasarela
-        datetime FechaUltimaActualizacion
+        decimal Amount
+        string Currency
+        int TransactionStatus FK "TransactionStatus.Id"
+        int TransactionType FK "TransactionType.Id"
+        datetime TransactionDate
+        string GatewayTransactionId
+        int PaymentMethod FK "PaymentMethod.Id"
+        string GatewayDetails
+        datetime LastUpdatedAt
     }
 
     Reservation ||--o{ Transaction : "genera_pago"

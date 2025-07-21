@@ -21,15 +21,15 @@ A continuación, se detallan las propiedades de la entidad `Location`, incluyend
 | Propiedades | Tipo de Dato (conceptual) | Descripción |
 |-------------|---------------------------|-------------|
 | `Id`  | `UUID` (o `int` si es identidad generada por DB) | Identificador único de la dirección |
-| `Pais` | `string` | País donde se entregarán los recursos de la reserva o donde se almacenan los recursos |
-| `Ciudad` | `string` | Ciudad donde se ubicará el evento o donde se almacenan los recursos|
-| `CodigoPostal` | `int` (o `int` si solo numérico) | CCódigo postal de la ubicación registrada. Considerar string para formatos flexibles (ej. alfanuméricos)|
-| `Calle` | `string` | Nombre de la calle de la ubicación |
-| `Colonia` | `string` | NNombre de la colonia, barrio o vecindario de la ubicación.|
-| `NumeroExterior` | `string` | Número exterior de la dirección. Utilizar `string` para manejar caracteres especiales (ej. "S/N", "Lote 3").|
-| `NumeroInterior` | `string` (opcional) |Número interior de la dirección, si aplica (puede ser nulo).|
-| `UsuarioCreacionId` | `UUID` (o `int`) | Clave foránea (`FK`) a la entidad `User` (`Usuario`) quien realiza el registro de la direccion.|
-| `FechaCreacion` | `DateTime`   | Marca de tiempo que registra cuándo se creó la ubicación. |
+| `Country` | `string` | País donde se entregarán los recursos de la reserva o donde se almacenan los recursos |
+| `City` | `string` | Ciudad donde se ubicará el evento o donde se almacenan los recursos|
+| `ZipCode` | `int` (o `int` si solo numérico) | CCódigo postal de la ubicación registrada. Considerar string para formatos flexibles (ej. alfanuméricos)|
+| `ZipCode` | `string` | Nombre de la calle de la ubicación |
+| `Neighborhood` | `string` | NNombre de la colonia, barrio o vecindario de la ubicación.|
+| `ExteriorNumber` | `string` | Número exterior de la dirección. Utilizar `string` para manejar caracteres especiales (ej. "S/N", "Lote 3").|
+| `InteriorNumber` | `string` (opcional) |Número interior de la dirección, si aplica (puede ser nulo).|
+| `CreatedByUserId` | `UUID` (o `int`) | Clave foránea (`FK`) a la entidad `User` (`Usuario`) quien realiza el registro de la direccion.|
+| `CreatedAt` | `DateTime`   | Marca de tiempo que registra cuándo se creó la ubicación. |
 ---
 
 ### 3. Diagrama de Entidad-Relación (ERD)
@@ -39,38 +39,38 @@ Este diagrama visualiza la estructura de la entidad `Location` y sus relaciones 
 erDiagram
     User {
         UUID Id PK
-        string Nombre
+        string FirstName
         string Email
     }
-    
    
     Location {
         UUID Id PK
-        string Pais
-        string Ciudad
-        string CodigoPostal
-        string Calle
-        string Colonia
-        string NumeroExterior
-        string NumeroInterior
-        UUID UsuarioCreacionId FK "User.Id"
-        datetime FechaCreacion
+        string Country
+        string City
+        string ZipCode
+        string Street
+        string Neighborhood
+        string ExteriorNumber
+        string InteriorNumber
+        UUID CreatedByUserId FK "User.Id"
+        datetime CreatedAt
     }
 
     Resource {
         UUID Id PK
-        string Nombre
-        string Tipo
-        int Capacidad
+        string Name
+        string Type
+        int Capacity
         UUID LocationId FK "Location.Id"
     }
 
     Reservation {
         UUID Id PK
-        datetime Fecha
-        datetime HoraInicio
-        datetime HoraFin
-        UUID LocationId FK "Location.Id"  
+        datetime Date
+        datetime StartTime
+        datetime EndTime
+        int Status FK "ReservationStatus.Id"
+        UUID LocationId FK "Location.Id"
     }
     
     User ||--o{ Location : "crea"
