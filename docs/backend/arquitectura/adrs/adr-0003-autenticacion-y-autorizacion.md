@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: ADR 0003:Autenticación y Autorización con JWT y ASP.NET Core Identity
+title: ADR 0003:Uso de JWT y ASP.NET Core Identity
 ---
 
 # ADR 0003: Autenticación y Autorización con JWT y ASP.NET Core Identity
