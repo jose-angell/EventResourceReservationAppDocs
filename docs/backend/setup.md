@@ -41,7 +41,40 @@ Asegúrate de tener instalado lo siguiente:
 - Opcional: **PostgreSQL** instalado directamente si no usas Docker para la DB.
 
 ---
- 
+
+## Organizacion de proyecto
+
+```bash
+EventResourceReservationApp/  <-- Carpeta raíz del repositorio
+├── EventResourceReservationApp.sln
+├── .dockerignore
+├── .gitignore
+├── EventResourceReservationApp.Api/             <-- Tu proyecto actual, renombrado para claridad
+│   ├── Controllers/
+│   ├── Program.cs
+│   ├── EventResourceReservationApp.Api.csproj
+│   └── ...
+├── EventResourceReservationApp.Application/     <-- Lógica de aplicación, DTOs, interfaces de casos de uso
+│   ├── EventResourceReservationApp.Application.csproj
+│   └── ... (ej. Features/, Common/, Interfaces/)
+├── EventResourceReservationApp.Domain/          <-- Entidades, valores objeto, reglas de negocio principales
+│   ├── EventResourceReservationApp.Domain.csproj
+│   └── ... (ej. Entities/, Enums/, ValueObjects/)
+├── EventResourceReservationApp.Infrastructure/  <-- Implementaciones de EF Core, servicios externos
+│   ├── EventResourceReservationApp.Infrastructure.csproj
+│   └── ... (ej. Persistence/, Services/)
+├── EventResourceReservationApp.UnitTests/  <-- Pruebas unitarias
+│   ├── EventResourceReservationApp.UnitTests.csproj
+│   └── ... (ej. ResourceUnitTests/, ServicesUnitTests/)
+├── EventResourceReservationApp.IntegrationTests/  <-- Pruebas de integracion
+│   ├── EventResourceReservationApp.IntegrationTests.csproj
+│   └── ... (ej. CreteReservationIntegrationTests/, ServicesIntegrationTests/)
+├── LICENSE
+└── README.md
+```
+
+---
+
 ### Clonar el Repositorio
 
 1. Abre tu terminal o línea de comandos.

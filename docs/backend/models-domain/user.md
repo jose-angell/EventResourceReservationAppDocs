@@ -22,16 +22,16 @@ A continuación, se detallan las propiedades de la entidad `User`, incluyendo su
 | Propiedades | Tipo de Dato (conceptual) | Descripción |
 |-------------|---------------------------|-------------|
 | `Id`  | `UUID` (o `int` si es identidad generada por DB) | Identificador único  para cada usuario. |
-|`Nombre` | `string` | Primer nombre del usuario. Considerar separar en `Nombre` y `SegundoNombre` si aplica.|
-|`PrimerApellido` | `string` | Primer apellido del usuario.|
-|`SegundoApellido`| `string`(opcional) | Segundo apellido del usuario (puede ser nulo).|
-|`Correo` | `string` | Correo electrónico único registrado en el sistema. Utilizado para autenticación y comunicación.|
+|`FirstName` | `string` | Primer nombre del usuario. Considerar separar en `Nombre` y `SegundoNombre` si aplica.|
+|`LastName` | `string` | Primer apellido del usuario.|
+|`SecondLastName`| `string`(opcional) | Segundo apellido del usuario (puede ser nulo).|
+|`Email` | `string` | Correo electrónico único registrado en el sistema. Utilizado para autenticación y comunicación.|
 |`PasswordHash` | `string` | Hash seguro de la contraseña de acceso al sistema. Nunca almacenar la contraseña en texto plano.|
-|`Telefono` | `string` |Número de teléfono de contacto del usuario.|
-|`Rol` | `Enum` (`int`) | Indica el rol del usuario en el sistema. Los valores posibles se definen en el `enum UserRole` en el código (ej. `SuperAdmin=1`, `Gestor=2`, `Cliente=3`).|
-| `FechaCreacion` | `DateTime` | Marca de tiempo que registra cuándo se creó el perfil del usuario. |
-| `UltimoAcceso` | `DateTime`(opcional) | Fecha y hora del último inicio de sesión del usuario. |
-| `Activo` | `bool` | Indica si la cuenta del usuario está activa o inactiva. |
+|`PhoneNumber` | `string` |Número de teléfono de contacto del usuario.|
+|`RoleId` | `Enum` (`int`) | Indica el rol del usuario en el sistema. Los valores posibles se definen en el `enum UserRole` en el código (ej. `SuperAdmin=1`, `Gestor=2`, `Cliente=3`).|
+| `CreatedAt` | `DateTime` | Marca de tiempo que registra cuándo se creó el perfil del usuario. |
+| `LastLoginAt` | `DateTime`(opcional) | Fecha y hora del último inicio de sesión del usuario. |
+| `IsActive` | `bool` | Indica si la cuenta del usuario está activa o inactiva. |
 
 ---
 
@@ -41,25 +41,30 @@ Este diagrama visualiza la estructura de la entidad `User` y sus relaciones clav
 
 ``` mermaid
 erDiagram
+    UserRole {
+        int Id PK
+        string Name
+        string Description
+    }
+
     Location {
         UUID Id PK
-        string DireccionCompleta
-        string Ciudad
+        string FullAddress
+        string City
     }
-
     User {
         UUID Id PK
-        string Nombre
-        string PrimerApellido
-        string SegundoApellido
-        string Correo
+        string FirstName
+        string LastName
+        string SecondLastName
+        string Email
         string PasswordHash
-        string Telefono
-        int Rol      
-        datetime FechaCreacion
-        datetime UltimoAcceso
-        bool Activo
+        string PhoneNumber
+        int RoleId FK "UserRole.Id"
+        datetime CreatedAt
+        datetime LastLoginAt
+        bool IsActive
     }
-
+    UserRole ||--o{ User : "desempeña_rol"
     Location ||--o{ User : "ubicacion_predeterminada"
 ```
