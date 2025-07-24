@@ -39,6 +39,29 @@ sequenceDiagram
     Sistema-->>Administrador: Actualiza disponibilidad en tiempo real
 
 ```
+---
+
+## Consultar Lista de Recursos
+Con el fin de facilitar la consulta de recursos para su reservacion, se enlistara un resumen da cada uno en la pagina principal, mostrando la informacion mas importante y permitiendo filtrar la informacion por categoria, precio, cantidad y por fecha. 
+Al hacer la consulta del resurso por una fecha en particular, el sistema debe buscar todas las reservas con un estatus confirmado en la tabla de reservation para ese dia y para cada resurso, y sumar todas las cantidades reservadas que existan, esto se aplica para cada recurso por separado.
+
+**Flujo Básico**
+1. El usuaroi accede a la pagina  principal para listar los recursos.
+2. Flitra los recursos por fecha (nombre, categoria, cantidad, precio).
+3. visualisa la salida del filtro.
+
+```mermaid
+sequenceDiagram
+    participant Usuario
+    participant Sistema
+
+    Usuario->>Sistema: Accede la pagina principal de los recursos
+    Sistema-->>Usuario: Muestra la lista de los recursos para el dia actual.
+
+    Usuario->>Sistema: Ingresa datos al filtro (nombre, fecha, cantidad, precio)
+    Sistema-->>Usuario: Muestra la lista de los recursos con el filtro aplicado
+```
+
 
 ---
 
