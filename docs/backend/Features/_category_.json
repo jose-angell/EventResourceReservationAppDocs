@@ -1,8 +1,4 @@
 {
   "label": "Features",
-  "position": 7,
-  "link": {
-    "type": "generated-index",
-    "description": "A continuación se muestra la documentacion detallada de cada feature:"
-  }
+  "position": 7
 }
