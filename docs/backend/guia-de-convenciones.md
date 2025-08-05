@@ -64,9 +64,9 @@ Este documento centraliza las **reglas de estilo, patrones de diseño, convencio
 * Las respuestas de error deben seguir un formato consistente para facilitar el manejo de errores por parte del cliente.
 ```jsonc
 {
-  "errorCode": "Resource.NotFound", // Código interno que categoriza el error
-  "message": "No se encontró el recurso con id '123'.", // Mensaje legible para el desarrollador/usuario
-  "details": [ /* Opcional: detalles adicionales, ej., errores de validación de modelo */ ]
+  "Status": "Resource.NotFound", // Código interno que categoriza el error
+  "Message": "No se encontró el recurso con id '123'.", // Mensaje legible para el desarrollador/usuario
+  "Detail": [ /* Opcional: detalles adicionales, ej., errores de validación de modelo */ ]
 }
 ```
 ---
