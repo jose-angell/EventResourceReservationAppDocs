@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 7
 title: ADR 0006:Implementación del Patrón Result
 ---
 

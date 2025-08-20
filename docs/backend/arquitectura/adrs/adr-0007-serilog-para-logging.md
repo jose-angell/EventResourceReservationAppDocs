@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 8
 title: ADR 0007:Implementación de Serilog para Logging
 ---
 
@@ -27,7 +27,7 @@ Se ha decidido implementar Serilog como el motor de logging subyacente para la a
     - **Capa de Aplicación:** En los handlers y servicios de la capa de Aplicación, se inyectará la interfaz estándar de .NET, `ILogger<T>`. Esta capa solo sabrá cómo registrar logs, pero no qué tecnología subyacente se utiliza.
 - Características Clave de Serilog a Utilizar:
     - **Sinks:** Se configurarán sinks para la consola (en desarrollo) y archivos (en producción). Se considerarán otros sinks como PostgreSQL o Seq en el futuro.
-    - **Structured Logging:** Se usará el logging estructurado para registrar objetos y propiedades de forma organizada, lo que es invaluable para el análisis de logs. Por ejemplo, en lugar de "Creando categoría con nombre: " + category.Name, se usará "Creando categoría con nombre: {CategoryName}", y Serilog almacenará CategoryName como un campo en el log.
+    - **Structured Logging:** Se usará el logging estructurado para registrar objetos y propiedades de forma organizada, lo que es invaluable para el análisis de logs. Por ejemplo, en lugar de `"Creando categoría con nombre: " + category.Name, se usará` `"Creando categoría con nombre: {CategoryName}"`, y Serilog almacenará CategoryName como un campo en el log.
 
 ## Alternativas Consideradas
 
