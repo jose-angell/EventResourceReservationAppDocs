@@ -23,8 +23,8 @@ A continuación, se detallan las propiedades de la entidad `Location`, incluyend
 | `Id`  | `UUID` (o `int` si es identidad generada por DB) | Identificador único de la dirección |
 | `Country` | `string` | País donde se entregarán los recursos de la reserva o donde se almacenan los recursos |
 | `City` | `string` | Ciudad donde se ubicará el evento o donde se almacenan los recursos|
-| `ZipCode` | `int` (o `int` si solo numérico) | CCódigo postal de la ubicación registrada. Considerar string para formatos flexibles (ej. alfanuméricos)|
-| `ZipCode` | `string` | Nombre de la calle de la ubicación |
+| `ZipCode` | `string` (o `int` si solo numérico) | CCódigo postal de la ubicación registrada. Considerar string para formatos flexibles (ej. alfanuméricos)|
+| `Street` | `string` | Nombre de la calle de la ubicación |
 | `Neighborhood` | `string` | NNombre de la colonia, barrio o vecindario de la ubicación.|
 | `ExteriorNumber` | `string` | Número exterior de la dirección. Utilizar `string` para manejar caracteres especiales (ej. "S/N", "Lote 3").|
 | `InteriorNumber` | `string` (opcional) |Número interior de la dirección, si aplica (puede ser nulo).|
