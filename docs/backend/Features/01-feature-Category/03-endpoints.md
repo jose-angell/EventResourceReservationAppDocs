@@ -203,7 +203,7 @@ GET /api/v1/categories/list
 
 ### Endpoint: `PUT /api/v1/categories/id`
 
-* **Descripción:** Permite crear una nueva categoria.
+* **Descripción:** Permite actualizar una categoria.
 * **Autenticación:** Requiere token JWT válido. Permiso: `categories.create`.
 * **Parámetros de Consulta (Route Parameters):**
     * `id` (obligatiro, int): Filtra categorias disponibles por identificacion unico.
@@ -258,7 +258,7 @@ PUT /api/v1/categories/1
 ---
 ### Endpoint: `DELETE /api/v1/categories/id`
 
-* **Descripción:** Permite crear una nueva categoria.
+* **Descripción:** Permite eliminar una categoria.
 * **Autenticación:** Requiere token JWT válido. Permiso: `categories.update`.
 * **Parámetros de Consulta (Route Parameters):**
     * `id` (obligatiro, int): Filtra categorias disponibles por identificacion unico.
