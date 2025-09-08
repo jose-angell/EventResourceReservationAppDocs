@@ -7,7 +7,7 @@ title: 03-endpoints
 
 > Archivo: `03-endpoints.md`
 
-Este documento detalla los **endpoints** expuestos por el backend para la feature `Location`. Incluye el método HTTP, la ruta, una descripción, así como ejemplos completos de solicitudes (requests) y respuestas (responses) para cada operación, incluyendo posibles códigos de error.
+Este documento detalla los **endpoints** expuestos por el backend para la feature `ReservationCarItem`. Incluye el método HTTP, la ruta, una descripción, así como ejemplos completos de solicitudes (requests) y respuestas (responses) para cada operación, incluyendo posibles códigos de error.
 
 ---
 
@@ -16,12 +16,10 @@ Esta tabla proporciona una vista rápida de todos los endpoints relacionados con
 
 | Método HTTP | Ruta de la API                     | Descripción Breve                                        |
 | :---------- | :--------------------------------- | :------------------------------------------------------- |
-| `GET`       | `/api/v1/locations`                | Obtiene una lista de todas las ubicaciones disponibles.     |
-| `GET`       | `/api/v1/locations/{id}`           | Obtiene los detalles de una ubicacion específica por su ID. |
-| `GET`       | `/api/v1/locations/list`           | Obtiene una lista con solo el id y el nombre de todas las categorias disponibles. |
-| `POST`      | `/api/v1/locations`             | Crea una nueva ubicacion para un recurso.                  |
-| `PUT`       | `/api/v1/locations/{id}`        | Actualiza completamente una ubicacion existente.           |
-| `DELETE`    | `/api/v1/locations/{id}`        | Elimina una ubicacion específica por su ID.                |
+| `GET`       | `/api/v1/ReservationCarItems`   | Obtiene una lista de todos los items en el carrito de reservas disponibles para el usuario.     |
+| `POST`      | `/api/v1/ReservationCarItems`   | Crea un nuevo item para el carrito de reservas.                  |
+| `PUT`       | `/api/v1/ReservationCarItems/{id}`    | Actualiza la cantidad de un item existente.           |
+| `DELETE`    | `/api/v1/ReservationCarItems/{id}`    | Elimina una item específica por su ID.                |
 
 ---
 ## 2. Detalle de Endpoints (Request & Response)
@@ -29,45 +27,34 @@ Esta tabla proporciona una vista rápida de todos los endpoints relacionados con
 Para cada endpoint, se especifican los detalles de la solicitud, los parámetros, el cuerpo de la respuesta esperada y los posibles códigos de error.
 
 
-### Endpoint: `GET /api/v1/locations`
-* **Descripción:** Permite obtener un listado de todas las ubicaicones disponibles para los usuarios.
-* **Autenticación:** Requiere token JWT válido. Permiso: `locations.read`.
+### Endpoint: `GET /api/v1/ReservationCarItems`
+* **Descripción:** Permite obtener un listado de todos los items en el carrito de reservas disponibles para un usuario.
+* **Autenticación:** Requiere token JWT válido. Permiso: `ReservationCarItem.read`.
 * **Parámetros de Consulta (Query Parameters):**
-    * `City` (opcional, string): Filtra ubicaciones disponibles por coincidencia de caracteres en el nombre de la ciudad.
-    * `CreatedByUserIdFilter` (opcional, Guid): Filtra por usuario de creacion.
-    * `OrderBy` (opcional, string): ordena ubicacion ascendete por nombre de ciudad o fecha de creacion (ej. `"City_asc"`, `"CreatedAt_asc"`).
+    * `ClientId` (obligatorio, string): Filtra los elementos disponibles por coincidencia de id con el del usuario.
+   
 * **Request (Ejemplo):**
 
 ```
-GET /api/v1/locations
+GET /api/v1/ReservationCarItems
 ```
 
 * **Response (HTTP 200 Ok - Ejemplo de éxito):**
     ```json
     [
       {
-        "Id": 1,
-        "Country": "Mexico",
-        "City": "Veracruz",
-        "ZipCode": 5876,
-        "Street": "calle 23",
-        "Neighborhood": "centro",
-        "ExteriorNumber": "1223",
-        "InteriorNumber": "A",
-        "CreateAt": "2025-08-03",
-        "CreatedByUserId": "f5e4d3c2-b1a0-9876-5432-10fedcba9876"
+        "Id": "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
+        "Clientid": "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
+        "ResourceId": "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
+        "Quantity": 12,
+        "AddedAt": "2025-08-03"
       },
       {
-        "Id": 2,
-        "Country": "Mexico",
-        "City": "Oaxaca",
-        "ZipCode": 4211,
-        "Street": "calle 12",
-        "Neighborhood": "centro",
-        "ExteriorNumber": "1223",
-        "InteriorNumber": "A",
-        "CreateAt": "2025-08-03",
-        "CreatedByUserId": "f5e4d3c2-b1a0-9876-5432-10fedcba9876"
+        "Id": "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
+        "Clientid": "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
+        "ResourceId": "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
+        "Quantity": 12,
+        "AddedAt": "2025-08-03"
       }
     ]
     ```
@@ -76,136 +63,75 @@ GET /api/v1/locations
         ```json
         {
           "Status": 500,
-          "Title": "Error inesperado al consultar las ubicaciones.",
-          "Detail": "Ocurrió un error inesperado en el servidor."
+          "Title": "Error interno del servidor",
+          "Detail": "Ocurrió un error inesperado. Por favor, inténtelo de nuevo más tarde."
         }
         ```
 ---        
-### Endpoint: `GET /api/v1/locations/id`
-* **Descripción:** Permite obtener un listado de todas las ubicacoines disponibles para los recursos o reservas.
-* **Autenticación:** Requiere token JWT válido. Permiso: `locaitons.read`.
-* **Parámetros de Consulta (Route Parameters):**
-    * `id` (obligatiro, int): Filtra ubicaciones disponibles por identificacion unico.
-   
-* **Request (Ejemplo):**
 
-```
-GET /api/v1/locations/1
-```
+### Endpoint: `POST /api/v1/ReservationCarItems`
 
-* **Response (HTTP 200 Ok - Ejemplo de éxito):**
-    ```json
-      {
-        "Id": 1,
-        "Country": "Mexico",
-        "City": "Veracruz",
-        "ZipCode": 5876,
-        "Street": "calle 23",
-        "Neighborhood": "centro",
-        "ExteriorNumber": "1223",
-        "InteriorNumber": "A",
-        "CreateAt": "2025-08-03",
-        "CreatedByUserId": "f5e4d3c2-b1a0-9876-5432-10fedcba9876"
-      }
-    ```
-* **Códigos de Error Posibles:**
-    * `404 Not Found`: Si el `id`de la ubicación no existe.
-        ```json
-        {
-          "Status": 404,
-          "Title": "Recurso no encontrado",
-          "Detail": "La operación de consulta falló porque la ubicación no existe."
-        }
-        ```
-    * `500 Internal Server Error"`: Si la operacion falla.
-        ```json
-        {
-          "Status": 500,
-          "Title": "Error inesperado al consultar las ubicación.",
-          "Detail": "Ocurrió un error inesperado en el servidor."
-        }
-        ```
----
-
-### Endpoint: `POST /api/v1/locations`
-
-* **Descripción:** Permite crear una nueva ubicación.
-* **Autenticación:** Requiere token JWT válido. Permiso: `locations.create`.
+* **Descripción:** Permite crear un nuevo elemento a la lista de recursos para el carrito de reservas.
+* **Autenticación:** Requiere token JWT válido. Permiso: `ReservationCarItems.create`.
 * **Request Body (JSON - Ejemplo):**
     ```json
     {
-        "Country": "Mexico",
-        "City": "Veracruz",
-        "ZipCode": 5876,
-        "Street": "calle 23",
-        "Neighborhood": "centro",
-        "ExteriorNumber": "1223",
-        "InteriorNumber": "A",
-        "CreateAt": "2025-08-03",
-        "CreatedByUserId": "f5e4d3c2-b1a0-9876-5432-10fedcba9876"
+        "ClientId": "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
+        "ResourceId": "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
+        "Quantity": 12
     }
     ```
 * **Response (HTTP 201 Created - Ejemplo de éxito):**
     ```json
     {
-      "id": "1",
-      "City": "Veracruz",
-      "ZipCode": 5876,
-      "Street": "calle 23",
-      "Neighborhood": "centro",
-      "ExteriorNumber": "1223",
-      "InteriorNumber": "A",
-      "CreateAt": "2025-08-03",
-      "CreatedByUserId": "f5e4d3c2-b1a0-9876-5432-10fedcba9876"
+      "Id":  "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
+      "ClientId": "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
+      "ResourceId": "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
+      "Quantity": 12
     }
     ```
 * **Códigos de Error Posibles:**
     * `400 Bad Request`:
-        * Si `CreatedByUserId` no es UUID válido.
-        * Si `City` Se encuetra vacia o con un valor null.
-        * Si `Country ` Se encuetra vacia o con un valor null.
-        * Si `zipCode  ` Se encuetra con un valor invalido o negativo.
-        * Si `street ` Se encuetra vacia o con un valor null.
-        * Si `exteriorNumber ` Se encuetra vacia o con un valor null.
+        * Si `ClientId` no es UUID válido.
+        * Si `ResourceId` no es UUID válidol.
+        * Si `Quantity ` es menor o igual a cero.
+        
         ```json
         {
           "Status" : 400,
           "Errors": {
-            "City": "El nombre supera los 100 caracteres."
+            "Quantity": "La cantidad debe ser mayor a cero."
           }
         }
         ```
     * `401 Unauthorized`: Si no se proporciona un token JWT o es inválido.
-    * `403 Forbidden`: Si el usuario no tiene el permiso `locations.create`.
+    * `403 Forbidden`: Si el usuario no tiene el permiso `ReservationCarItems.create`.
     * `500 Internal Server Error`: 
       * Para errores inesperados.
         ```json
         {
           "Status" : 500,
-          "Title" : "Error inesperado al crear la ubiccion.",
-          "Detail" : "Ocurrió un error inesperado en el servidor."
+          "Title": "Error interno del servidor",
+          "Detail": "Ocurrió un error inesperado. Por favor, inténtelo de nuevo más tarde."
         }
         ```
 ---
 
-### Endpoint: `PUT /api/v1/locations/id`
+### Endpoint: `PUT /api/v1/ReservationCarItems/id`
 
-* **Descripción:** Permite crear una nueva ubicaciones.
-* **Autenticación:** Requiere token JWT válido. Permiso: `locations.create`.
+* **Descripción:** Permite actualizar la cantidad de un item en la lista.
+* **Autenticación:** Requiere token JWT válido. Permiso: `ReservationCarItems.create`.
 * **Parámetros de Consulta (Route Parameters):**
-    * `id` (obligatiro, int): Filtra ubicaciones disponibles por identificacion unico.
+    * `Id` (obligatiro, int): Filtra el item  disponibles por identificacion unico.
 ```
-PUT /api/v1/categories/1
+PUT /api/v1/ReservationCarItems/1
 ```
 * **Request Body (JSON - Ejemplo):**
     ```json
     {
-      "City": "Veracruz",
-      "ZipCode": 5876,
-      "Street": "calle 23",
-      "Neighborhood": "centro",
-      "ExteriorNumber": "1223",
-      "InteriorNumber": "A",
+      "Id": "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
+      "Quantity": 43,
+      
     }
     ```
 * **Response (HTTP 204 No Content - Ejemplo de éxito):**
@@ -216,40 +142,37 @@ PUT /api/v1/categories/1
     ```
 * **Códigos de Error Posibles:**
     * `400 Bad Request`:
-        * Si `CreatedByUserId` no es UUID válido.
-        * Si `City` Se encuetra vacia o con un valor null.
-        * Si `Country ` Se encuetra vacia o con un valor null.
-        * Si `zipCode  ` Se encuetra con un valor invalido o negativo.
-        * Si `street ` Se encuetra vacia o con un valor null.
-        * Si `exteriorNumber ` Se encuetra vacia o con un valor null.
+        * Si `Id` no es UUID válido.
+        * Si `Quantity` es un valor menor o igual a cero.
+        
         ```json
         {
           "Status" : 400,
           "Errors": {
-            "City": "El nombre supera los 100 caracteres."
+            "Quantity": "La cantidad debe ser mayor a cero."
           }
         }
         ```
     * `401 Unauthorized`: Si no se proporciona un token JWT o es inválido.
-    * `403 Forbidden`: Si el usuario no tiene el permiso `locations.create`.
+    * `403 Forbidden`: Si el usuario no tiene el permiso `ReservationCarItems.create`.
     * `500 Internal Server Error`: 
       * Para errores inesperados.
         ```json
         {
           "Status" : 500,
-          "Title" : "Error inesperado al actualizar la ubicion.",
-          "Detail" : "Ocurrió un error inesperado en el servidor."
+          "Title": "Error interno del servidor",
+          "Detail": "Ocurrió un error inesperado. Por favor, inténtelo de nuevo más tarde."
         }
         ```
 ---
-### Endpoint: `DELETE /api/v1/locations/id`
+### Endpoint: `DELETE /api/v1/ReservationCarItems/id`
 
-* **Descripción:** Permite crear una nueva ubicaion.
-* **Autenticación:** Requiere token JWT válido. Permiso: `locations.update`.
+* **Descripción:** Permite eliminar un item.
+* **Autenticación:** Requiere token JWT válido. Permiso: `ReservationCarItems.update`.
 * **Parámetros de Consulta (Route Parameters):**
-    * `id` (obligatiro, int): Filtra ubicaciones disponibles por identificacion unico.
+    * `Id` (obligatiro, int): Filtra el item  disponibles por identificacion unico.
 ```
-PUT /api/v1/locations/1
+PUT /api/v1/ReservationCarItems/1
 ```
 
 * **Response (HTTP 204 No Content - Ejemplo de éxito):**
@@ -265,7 +188,7 @@ PUT /api/v1/locations/1
         {
           "Status" : 400,
           "Title" : "Entrada inválida",
-          "Detail" : "El ID de la ubicaion debe ser mayor que cero."
+          "Detail" : "El ID del item del carrito de reservas debe ser valido."
         }
         ```
     * `401 Unauthorized`: Si no se proporciona un token JWT o es inválido.
@@ -275,8 +198,8 @@ PUT /api/v1/locations/1
         ```json
         {
           "Status" : 500,
-          "Title" : "Error inesperado al eliminar la ubicación.",
-          "Detail" : "Ocurrió un error inesperado en el servidor."
+          "Title": "Error interno del servidor",
+          "Detail": "Ocurrió un error inesperado. Por favor, inténtelo de nuevo más tarde."
         }
         ```
 ---

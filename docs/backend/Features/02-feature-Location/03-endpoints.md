@@ -195,7 +195,7 @@ GET /api/v1/locations/1
 * **Parámetros de Consulta (Route Parameters):**
     * `id` (obligatiro, int): Filtra ubicaciones disponibles por identificacion unico.
 ```
-PUT /api/v1/categories/1
+PUT /api/v1/locations/1
 ```
 * **Request Body (JSON - Ejemplo):**
     ```json
