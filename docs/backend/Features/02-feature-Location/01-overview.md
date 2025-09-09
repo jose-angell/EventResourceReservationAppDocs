@@ -11,7 +11,7 @@ title: 01-overview
 
 ### 1. Resumen de la Feature
 
-Permite aun usuario crear ubicaciones para conocer por un lado el destino de los recursos reservados por el cliente y tambien la ubicación donde se almacenan los recursos disponibles
+Permite a un usuario crear ubicaciones para conocer por un lado el destino de los recursos reservados por el cliente y tambien la ubicación donde se almacenan los recursos disponibles
 
 ---
 
@@ -82,7 +82,7 @@ Permite aun usuario crear ubicaciones para conocer por un lado el destino de los
 * **And**  llena todos los campos requeridos del formulario.
 * **When** el gestor llama al endpoint `POST /api/v1/locations`
 * **Then** el sistema responde con un `HTTP 201 Created`
-* **And** el cuerpo de la respuesta contiene un objeto JSON con `{ id, n City, Country, street, etc... }` para la ubicacion creacada.
+* **And** el cuerpo de la respuesta contiene un objeto JSON con `{ id, City, Country, street, etc... }` para la ubicacion creacada.
 
 **Escenario alternativo - Crecion inválida**
 * **Given** un gestor autenticado

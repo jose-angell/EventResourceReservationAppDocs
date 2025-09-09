@@ -190,12 +190,12 @@ GET /api/v1/locations/1
 
 ### Endpoint: `PUT /api/v1/locations/id`
 
-* **Descripción:** Permite crear una nueva ubicaciones.
+* **Descripción:** Permite actualizar una ubicaciones.
 * **Autenticación:** Requiere token JWT válido. Permiso: `locations.create`.
 * **Parámetros de Consulta (Route Parameters):**
     * `id` (obligatiro, int): Filtra ubicaciones disponibles por identificacion unico.
 ```
-PUT /api/v1/categories/1
+PUT /api/v1/locations/1
 ```
 * **Request Body (JSON - Ejemplo):**
     ```json
@@ -244,7 +244,7 @@ PUT /api/v1/categories/1
 ---
 ### Endpoint: `DELETE /api/v1/locations/id`
 
-* **Descripción:** Permite crear una nueva ubicaion.
+* **Descripción:** Permite eliminar una ubicaion.
 * **Autenticación:** Requiere token JWT válido. Permiso: `locations.update`.
 * **Parámetros de Consulta (Route Parameters):**
     * `id` (obligatiro, int): Filtra ubicaciones disponibles por identificacion unico.
