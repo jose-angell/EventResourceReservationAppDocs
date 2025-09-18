@@ -7,7 +7,7 @@ title: 03-endpoints
 
 > Archivo: `03-endpoints.md`
 
-Este documento detalla los **endpoints** expuestos por el backend para la feature `ReservationCarItem`. Incluye el método HTTP, la ruta, una descripción, así como ejemplos completos de solicitudes (requests) y respuestas (responses) para cada operación, incluyendo posibles códigos de error.
+Este documento detalla los **endpoints** expuestos por el backend para la feature `Review`. Incluye el método HTTP, la ruta, una descripción, así como ejemplos completos de solicitudes (requests) y respuestas (responses) para cada operación, incluyendo posibles códigos de error.
 
 ---
 
@@ -16,10 +16,11 @@ Esta tabla proporciona una vista rápida de todos los endpoints relacionados con
 
 | Método HTTP | Ruta de la API                     | Descripción Breve                                        |
 | :---------- | :--------------------------------- | :------------------------------------------------------- |
-| `GET`       | `/api/v1/ReservationCarItems`   | Obtiene una lista de todos los items en el carrito de reservas disponibles para el usuario.     |
-| `POST`      | `/api/v1/ReservationCarItems`   | Crea un nuevo item para el carrito de reservas.                  |
-| `PUT`       | `/api/v1/ReservationCarItems/{id}`    | Actualiza la cantidad de un item existente.           |
-| `DELETE`    | `/api/v1/ReservationCarItems/{id}`    | Elimina una item específica por su ID.                |
+| `GET`       | `/api/v1/Reviews`   | Obtiene una lista de todas las reseñas disponibles para mostrar.     |
+| `GET`       | `/api/v1/Reviews/{id}`   | Obtiene los detalles de una reseña específica por su ID.     |
+| `POST`      | `/api/v1/Reviews`   | Crea una nueva reseñas.                  |
+| `PUT`       | `/api/v1/Reviews/{id}`    | Actualiza el comentario y el riting de una reseña existente.           |
+| `DELETE`    | `/api/v1/Reviews/{id}`    | Elimina una reseña específica por su ID.                |
 
 ---
 ## 2. Detalle de Endpoints (Request & Response)
@@ -27,16 +28,20 @@ Esta tabla proporciona una vista rápida de todos los endpoints relacionados con
 Para cada endpoint, se especifican los detalles de la solicitud, los parámetros, el cuerpo de la respuesta esperada y los posibles códigos de error.
 
 
-### Endpoint: `GET /api/v1/ReservationCarItems`
+### Endpoint: `GET /api/v1/Reviews`
 * **Descripción:** Permite obtener un listado de todos los items en el carrito de reservas disponibles para un usuario.
-* **Autenticación:** Requiere token JWT válido. Permiso: `ReservationCarItem.read`.
+* **Autenticación:** Requiere token JWT válido. Permiso: `Reviews.read`.
 * **Parámetros de Consulta (Query Parameters):**
-    * `ClientId` (obligatorio, string): Filtra los elementos disponibles por coincidencia de id con el del usuario.
+    * `ResourceId` (opcional, Guid): Filtra los elementos disponibles por coincidencia de id con el del recurso.
+    * `UserId` (opcional, Guid): Filtra los elementos disponibles por coincidencia de id con el del usuario.
+    * `Rating` (opcional, int): Filtra los elementos disponibles por coincidencia de el numero de valoraciones.
+    * `CreatedAt` (opcional, datetime): Filtra los elementos disponibles por coincidencia fecha de creacion.
+    * `OrderBy` (opcional, string): ordemaniento de la consulta (`rating_asc`, `rating_desc`, `date_asc`, `date_desc`).
    
 * **Request (Ejemplo):**
 
 ```
-GET /api/v1/ReservationCarItems
+GET /api/v1/Reviews
 ```
 
 * **Response (HTTP 200 Ok - Ejemplo de éxito):**
@@ -44,16 +49,18 @@ GET /api/v1/ReservationCarItems
     [
       {
         "Id": "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
-        "Clientid": "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
         "ResourceId": "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
-        "Quantity": 12,
+        "UserId": "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
+        "Rating": 5,
+        "Comment": "Exelente servicio y atencion.",
         "AddedAt": "2025-08-03"
       },
       {
         "Id": "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
-        "Clientid": "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
         "ResourceId": "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
-        "Quantity": 12,
+        "UserId": "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
+        "Rating": 5,
+        "Comment": "Exelente servicio y atencion.",
         "AddedAt": "2025-08-03"
       }
     ]
@@ -69,43 +76,47 @@ GET /api/v1/ReservationCarItems
         ```
 ---        
 
-### Endpoint: `POST /api/v1/ReservationCarItems`
+### Endpoint: `POST /api/v1/Reviews`
 
-* **Descripción:** Permite crear un nuevo elemento a la lista de recursos para el carrito de reservas.
-* **Autenticación:** Requiere token JWT válido. Permiso: `ReservationCarItems.create`.
+* **Descripción:** Permite crear una nueva reseña de los recursos en el sistema.
+* **Autenticación:** Requiere token JWT válido. Permiso: `Reviews.create`.
 * **Request Body (JSON - Ejemplo):**
     ```json
     {
-        "ClientId": "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
         "ResourceId": "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
-        "Quantity": 12
+        "UserId": "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
+        "Rating": 5,
+        "Comment": "Exelente servicio y atencion."
     }
     ```
 * **Response (HTTP 201 Created - Ejemplo de éxito):**
     ```json
     {
       "Id":  "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
-      "ClientId": "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
       "ResourceId": "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
-      "Quantity": 12
+      "UserId": "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
+      "Rating": 5,
+      "Comment": "Exelente servicio y atencion.",
+      "AddedAt": "2025-08-03"
     }
     ```
 * **Códigos de Error Posibles:**
     * `400 Bad Request`:
         * Si `ClientId` no es UUID válido.
         * Si `ResourceId` no es UUID válidol.
-        * Si `Quantity ` es menor o igual a cero.
+        * Si `Riting ` es menor o igual a cero o mayor a 5.
+        * Si `Comment ` esta vacio.
         
         ```json
         {
           "Status" : 400,
           "Errors": {
-            "Quantity": "La cantidad debe ser mayor a cero."
+            "Riting": "La cantidad debe estar entre 1 y 5."
           }
         }
         ```
     * `401 Unauthorized`: Si no se proporciona un token JWT o es inválido.
-    * `403 Forbidden`: Si el usuario no tiene el permiso `ReservationCarItems.create`.
+    * `403 Forbidden`: Si el usuario no tiene el permiso `Review.create`.
     * `500 Internal Server Error`: 
       * Para errores inesperados.
         ```json
@@ -117,23 +128,25 @@ GET /api/v1/ReservationCarItems
         ```
 ---
 
-### Endpoint: `PUT /api/v1/ReservationCarItems/id`
+### Endpoint: `PUT /api/v1/Reviews/id`
 
-* **Descripción:** Permite actualizar la cantidad de un item en la lista.
-* **Autenticación:** Requiere token JWT válido. Permiso: `ReservationCarItems.create`.
+* **Descripción:** Permite actualizar la puntuacion y el comentario de la reseña.
+* **Autenticación:** Requiere token JWT válido. Permiso: `Review.create`.
 * **Parámetros de Consulta (Route Parameters):**
     * `Id` (obligatiro, int): Filtra el item  disponibles por identificacion unico.
 * **Request Body (Body Parameters):**
-    * `Id` (obligatiro, int): Filtra el item  disponibles por identificacion unico.
-    * `Quantity` (obligatiro, int): nueva cantidad del numero de recurso a agregar.
+    * `Id` (obligatiro, int): Filtra el item  disponibles por identificacion unico y debe ser el mismo al de la ruta.
+    * `Rating` (obligatiro, int): Puntuacion de el recurso.
+    * `Comment` (obligatiro, int): Comentario de el recurso.
 ```
-PUT /api/v1/ReservationCarItems/1
+PUT /api/v1/Reviews/1
 ```
 * **Request Body (JSON - Ejemplo):**
     ```json
     {
       "Id": "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
-      "Quantity": 43,
+      "Rating": 4,
+      "Comment": "buen servicio",
       
     }
     ```
@@ -146,7 +159,8 @@ PUT /api/v1/ReservationCarItems/1
 * **Códigos de Error Posibles:**
     * `400 Bad Request`:
         * Si `Id` no es UUID válido.
-        * Si `Quantity` es un valor menor o igual a cero.
+        * Si `Rating` es un valor menor o igual a cero o mayor a 5.
+        * Si `Comment` esta vacio.
         
         ```json
         {
@@ -157,7 +171,7 @@ PUT /api/v1/ReservationCarItems/1
         }
         ```
     * `401 Unauthorized`: Si no se proporciona un token JWT o es inválido.
-    * `403 Forbidden`: Si el usuario no tiene el permiso `ReservationCarItems.create`.
+    * `403 Forbidden`: Si el usuario no tiene el permiso `Review.update`.
     * `500 Internal Server Error`: 
       * Para errores inesperados.
         ```json
@@ -168,14 +182,14 @@ PUT /api/v1/ReservationCarItems/1
         }
         ```
 ---
-### Endpoint: `DELETE /api/v1/ReservationCarItems/id`
+### Endpoint: `DELETE /api/v1/Reviews/id`
 
-* **Descripción:** Permite eliminar un item.
-* **Autenticación:** Requiere token JWT válido. Permiso: `ReservationCarItems.update`.
+* **Descripción:** Permite eliminar una reseña.
+* **Autenticación:** Requiere token JWT válido. Permiso: `Review.update`.
 * **Parámetros de Consulta (Route Parameters):**
     * `Id` (obligatiro, int): Filtra el item  disponibles por identificacion unico.
 ```
-PUT /api/v1/ReservationCarItems/1
+PUT /api/v1/Reviews/1
 ```
 
 * **Response (HTTP 204 No Content - Ejemplo de éxito):**
@@ -191,11 +205,11 @@ PUT /api/v1/ReservationCarItems/1
         {
           "Status" : 400,
           "Title" : "Entrada inválida",
-          "Detail" : "El ID del item del carrito de reservas debe ser valido."
+          "Detail" : "El ID del item de la reseña debe ser valido."
         }
         ```
     * `401 Unauthorized`: Si no se proporciona un token JWT o es inválido.
-    * `403 Forbidden`: Si el usuario no tiene el permiso `ReservationCarItems.delete`.
+    * `403 Forbidden`: Si el usuario no tiene el permiso `review.delete`.
     * `500 Internal Server Error`: 
       * Para errores inesperados.
         ```json
