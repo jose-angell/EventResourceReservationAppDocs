@@ -11,7 +11,7 @@ title: 01-overview
 
 ### 1. Resumen de la Feature
 
-Permite que un cliente peuda crear un reseña que refleje la experiencia que tuvo al reservar con nosotros para su evento, esta opinion puede ser para cualquier recurso que la persona reservara y sirviendo tambien para que otras personas puedan usar como referencia.
+Permite que un cliente pueda crear un reseña que refleje la experiencia que tuvo al reservar con nosotros para su evento, esta opinion puede ser para cualquier recurso que la persona reservara y sirviendo tambien para que otras personas puedan usar como referencia.
 
 ---
 
