@@ -3,6 +3,6 @@
   "position": 5,
   "link": {
     "type": "generated-index",
-    "description": "A continuación se muestra los templates para la creacion de nuevos features: cada uno debe ir en su correspondiente carpeta -> 📂 Carpeta: `docs/backend/Features/<nombre-feature>/`"
+    "description": "A continuación se muestra la documentacion del feature de Review."
   }
 }

@@ -7,7 +7,7 @@ title: 03-endpoints
 
 > Archivo: `03-endpoints.md`
 
-Este documento detalla los **endpoints** expuestos por el backend para la feature `<Nombre de la Feature>`. Incluye el método HTTP, la ruta, una descripción, así como ejemplos completos de solicitudes (requests) y respuestas (responses) para cada operación, incluyendo posibles códigos de error.
+Este documento detalla los **endpoints** expuestos por el backend para la feature `Category`. Incluye el método HTTP, la ruta, una descripción, así como ejemplos completos de solicitudes (requests) y respuestas (responses) para cada operación, incluyendo posibles códigos de error.
 
 ---
 
