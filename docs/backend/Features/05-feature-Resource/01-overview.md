@@ -23,7 +23,7 @@ Permite que un `Manager` pueda gestionar los recursos disponibles dentro del sis
 
 #### 1.2. Contexto de Negocio
 
-1.  **Flujo Actual (sin Recursos):** Las ubicaciones de los recursos no cuentan con una digitalizacion que permita su facil acceso y cosultaeficiente, lo cual genera retrasos en las respuestas a los usuarios. de igual forma si un cliente frecuente tiene varias reservas tendra que volver a ingresar el nombre del recurso manualmente.
+1.  **Flujo Actual (sin Recursos):** Los recursos no cuentan con una digitalizacion que permita su facil acceso y cosulta eficiente, lo cual genera retrasos en las respuestas a los usuarios. de igual forma si un cliente frecuente tiene varias reservas tendra que volver a ingresar el nombre del recurso manualmente.
 2.  **Flujo Propuesto (con gestión de Recursos):** El gestor utiliza la nueva funcionalidad de Gestión de Recursos para crear, editar y eliminar. Permite a un organizador consultar la disponibilidad de recursos en tiempo real, eliminando la necesidad de llamadas manuales y mejorando la eficiencia del equipo de inventario, lo que facilita la organización y búsqueda.
 3.  **Beneficios Clave:**
     * Mejora en la organización y administracion de recursos: Permite una estructura lógica para el inventario.
@@ -38,9 +38,6 @@ Permite que un `Manager` pueda gestionar los recursos disponibles dentro del sis
 ---
 
 ### 2. Actores Involucrados
-<!-- Lista quiénes participan en este proceso -->
-#### Definición  
-**Definición:** Un **actor** es un usuario o sistema externo que interactúa directamente con la feature. Los **stakeholders** son roles o equipos interesados en el correcto funcionamiento y éxito de la misma.
 
 | Actor / Stakeholder          | Rol en la Feature / Interés                               |
 | :--------------------------- | :-------------------------------------------------------- |
@@ -53,15 +50,6 @@ Permite que un `Manager` pueda gestionar los recursos disponibles dentro del sis
 
 #### 3.1 Historia de Usuario
 
-**Definición:** Una frase concisa que describe la necesidad desde la **perspectiva del usuario**, enfocándose en el valor.
-* **Quién** (rol/actor).
-* **Qué** (la capacidad o acción que se desea).
-* **Para qué** (el valor o beneficio obtenido).
-
-**Formato:**
-> “Como `<Actor>`, quiero `<acción>` para `<beneficio>`.”
-
-**Ejemplo:**
 > “Como **Organizador**, quiero **consultar los recursos disponibles por fecha** para **poder planificar eventos sin depender de comunicaciones por email**.”
 
 ---
