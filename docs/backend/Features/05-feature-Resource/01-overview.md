@@ -87,7 +87,7 @@ Permite que un `Manager` pueda gestionar los recursos disponibles dentro del sis
 **Escenario de éxito - Editar un recurso**
 * **Given** un gestor autenticado con el permiso `Resource.update`
 * **And**  llena todos los campos requeridos del formulario.
-* **When** el gestor llama al endpoint `PUT /api/v1/Reviews/id`
+* **When** el gestor llama al endpoint `PUT /api/v1/Resources/id`
 * **Then** el sistema responde con un `HTTP 204 No Content`
 
 **Escenario alternativo - Edicion inválida**

@@ -13,7 +13,7 @@ Este documento describe las **entidades, tablas, migraciones y relaciones** de b
 
 ## 1. Entidades nuevas o modificadas
 <!-- Define las tablas o agregados con su esquema SQL o clases EF -->
-Definicion de las entidades de dominio y su mapeo a la base de datos (tablas, agregados). Se decidio utiliar un Id de tipo GUID para los recursos, se agregaron campos de control para utilizar la disponibilidad de los recursos.
+Definicion de las entidades de dominio y su mapeo a la base de datos (tablas, agregados). Se decidio utiliar un Id de tipo GUID para los recursos, se agregaron campos de control para agilizar la disponibilidad de los recursos.
 
 
 ### Opción B: Definición con Clases de C# (EF Core Entities)

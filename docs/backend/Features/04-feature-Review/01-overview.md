@@ -58,7 +58,7 @@ Permite que un cliente pueda crear un reseña que refleje la experiencia que tuv
 
 #### 3.1 Historia de Usuario
 
-> “Como **Gestor**, quiero **gestionar la reseñas cada recurso del evento** para **poder compartir las diferentes experiencias que forman parte del evento**.”
+> “Como **Gestor**, quiero **gestionar la reseñas para cada recurso del evento** para **poder compartir las diferentes experiencias que forman parte del evento**.”
 
 ---
 
