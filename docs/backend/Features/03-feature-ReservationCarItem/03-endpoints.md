@@ -175,7 +175,7 @@ PUT /api/v1/ReservationCarItems/1
 * **Parámetros de Consulta (Route Parameters):**
     * `Id` (obligatiro, int): Filtra el item  disponibles por identificacion unico.
 ```
-PUT /api/v1/ReservationCarItems/1
+DELETE /api/v1/ReservationCarItems/1
 ```
 
 * **Response (HTTP 204 No Content - Ejemplo de éxito):**

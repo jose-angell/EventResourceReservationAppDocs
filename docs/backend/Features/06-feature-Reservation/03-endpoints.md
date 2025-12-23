@@ -52,6 +52,8 @@ GET /api/v1/reservations
       {
         "Id" : "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
         "ClientId" : "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
+        "StartTime" : "2025-08-23",
+        "EndTime" : "2025-08-23",
         "ClientName" : "jose",
         "ClientPhoneNumber" : "223232113",
         "StatusId" : 1,
@@ -65,6 +67,8 @@ GET /api/v1/reservations
       {
         "Id" : "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
         "ClientId" : "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
+        "StartTime" : "2025-08-23",
+        "EndTime" : "2025-08-23",
         "ClientName" : "jose",
         "ClientPhoneNumber" : "223232113",
         "StatusId" : 1,
@@ -104,6 +108,8 @@ GET /api/v1/reservations/1
       {
         "Id" : "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
         "ClientId" : "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
+        "StartTime" : "2025-08-23",
+        "EndTime" : "2025-08-23",
         "ClientName" : "jose",
         "ClientPhoneNumber" : "223232113",
         "StatusId" : 1,
@@ -142,6 +148,8 @@ GET /api/v1/reservations/1
     {
         "Id" : "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
         "ClientId" : "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
+        "StartTime" : "2025-08-23",
+        "EndTime" : "2025-08-23",
         "ClientName" : "jose",
         "ClientPhoneNumber" : "223232113",
         "StatusId" : 1,
@@ -153,78 +161,71 @@ GET /api/v1/reservations/1
 * **Response (HTTP 201 Created - Ejemplo de éxito):**
     ```json
     {
-      "Id" : "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
-      "ClientId" : "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
-      "ClientName" : "jose",
-      "ClientPhoneNumber" : "223232113",
-      "StatusId" : 1,
-      "StatusDescription" : "Disponible",
-      "TotalAmount" : 230.99,
-      "Quantity" : 109,
-      "LocationId" : 4,
-      "LocationDescription" : "colonia del bosque",
-      "Created" : "2025-08-23"
+        "Id" : "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
+        "ClientId" : "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
+        "StartTime" : "2025-08-23",
+        "EndTime" : "2025-08-23",
+        "ClientName" : "jose",
+        "ClientPhoneNumber" : "223232113",
+        "StatusId" : 1,
+        "StatusDescription" : "Disponible",
+        "TotalAmount" : 230.99,
+        "Quantity" : 109,
+        "LocationId" : 4,
+        "LocationDescription" : "colonia del bosque",
+        "Created" : "2025-08-23"
     }
     ```
 * **Códigos de Error Posibles:**
     * `400 Bad Request`:
         * Si `ClientId` no es UUID válido.
-        * Si `CategoryId`  esta vacio.
+        * Si `ClientPhoneNumber`  esta vacio.
         * Si `StartTime`  esta vacio.
-        * Si `StartTime`  esta vacio.
+        * Si `EndTime`  esta vacio.
         * Si `LocationId` esta vacio.
         * Si `TotalAmount` La cantidad a pagar debe ser mayor que cero.
         ```json
         {
           "Status" : 400,
           "Errors": {
-            "name": "El nombre supera los 100 caracteres."
+            "name": "La cantidad a pagar debe ser mayor que cero"
           }
         }
         ```
     * `401 Unauthorized`: Si no se proporciona un token JWT o es inválido.
-    * `403 Forbidden`: Si el usuario no tiene el permiso `resources.create`.
-    * `409 Conflict`: 
-      * Si el nombre del esta duplicado en la misma ubicación.
-        ```json
-        {
-          "Status" : 409,
-          "Title" : "Conflicto al crear el recurso",
-          "Detail" : "Ya existe un recurso con el nombre '{request.Name}' en la ubicación especificada."
-        }
-        ```
+    * `403 Forbidden`: Si el usuario no tiene el permiso `reservations.create`.
+   
     * `500 Internal Server Error`: 
       * Para errores inesperados.
         ```json
         {
           "Status" : 500,
-          "Title" : "Error inesperado al crear el recurso.",
+          "Title" : "Error inesperado al crear la reserva.",
           "Detail" : "Ocurrió un error inesperado en el servidor."
         }
         ```
 ---
 
-### Endpoint: `PUT /api/v1/resources/id`
+### Endpoint: `PUT /api/v1/reservations/id`
 
-* **Descripción:** Permite actualizar un recurso.
-* **Autenticación:** Requiere token JWT válido. Permiso: `resources.create`.
+* **Descripción:** Permite actualizar una reserva.
+* **Autenticación:** Requiere token JWT válido. Permiso: `reservations.create`.
 * **Parámetros de Consulta (Route Parameters):**
-    * `id` (obligatiro, int): Filtra recurso disponible por identificacion unico.
+    * `id` (obligatiro, int): Filtra reserva disponible por identificacion unico.
 ```
-PUT /api/v1/resources/1
+PUT /api/v1/reservations/1
 ```
 * **Request Body (JSON - Ejemplo):**
     ```json
     {
-      "Id" : "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
-      "StatusId" : 1,
-      "Name" : "Decoraciones luz blanca",
-      "Description" : "Mesas y sillas para exterior blanca.",
-      "Price" : 230.99,
-      "Quantity" : 109,
-      "CategoryId" : 3,
-      "LocationId" : 4,
-      "AuthorizationType" : 1,
+        "Id" : "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
+        "StartTime" : "2025-08-23",
+        "EndTime" : "2025-08-23",
+        "ClientPhoneNumber" : "223232113",
+        "StatusId" : 1,
+        "TotalAmount" : 230.99,
+        "Quantity" : 109,
+        "LocationId" : 4,
     }
     ```
 * **Response (HTTP 204 No Content - Ejemplo de éxito):**
@@ -235,45 +236,130 @@ PUT /api/v1/resources/1
     ```
 * **Códigos de Error Posibles:**
     * `400 Bad Request`:
-        * Si `Name` ya se encuentra registrada en la base de datos o excede el tamaño maximo permitido (200 careacteres).
-        * Si `Description` excede el tamaño maximo permitido (2000 careacteres).
+        * Si `ClientComment` excede el tamaño maximo permitido (2000 careacteres).
         ```json
         {
           "Status" : 400,
           "Errors": {
-            "name": "El nombre supera los 200 caracteres."
+            "name": "El comentario del cliente supera los 200 caracteres."
           }
         }
         ```
     * `401 Unauthorized`: Si no se proporciona un token JWT o es inválido.
-    * `403 Forbidden`: Si el usuario no tiene el permiso `resources.create`.
-    * `409 Conflict`: 
-      *  Si el nombre del esta duplicado en la misma ubicación.
-        ```json
-        {
-          "Status" : 409,
-          "Title" : "Conflicto al crear el recurso",
-          "Detail" : "Ya existe un recurso con el nombre '{request.Name}' en la ubicación especificada."
-        }
-        ```
+    * `403 Forbidden`: Si el usuario no tiene el permiso `reservations.create`.
     * `500 Internal Server Error`: 
       * Para errores inesperados.
         ```json
         {
           "Status" : 500,
-          "Title" : "Error inesperado al actualizar el recurso.",
+          "Title" : "Error inesperado al actualizar la reserva.",
           "Detail" : "Ocurrió un error inesperado en el servidor."
         }
         ```
 ---
-### Endpoint: `DELETE /api/v1/resources/id`
 
-* **Descripción:** Permite eliminar una categoria.
-* **Autenticación:** Requiere token JWT válido. Permiso: `resources.update`.
+### Endpoint: `PUT /api/v1/reservations/status/id`
+
+* **Descripción:** Permite actualizar el estatus de una reserva.
+* **Autenticación:** Requiere token JWT válido. Permiso: `reservations.create`.
+* **Parámetros de Consulta (Route Parameters):**
+    * `id` (obligatiro, int): Filtra reserva disponible por identificacion unico.
+```
+PUT /api/v1/reservations/status/1
+```
+* **Request Body (JSON - Ejemplo):**
+    ```json
+    {
+        "Id" : "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
+        "AdminId" : "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
+        "StatusId" : 1,
+        "AdminComment" : "aprobado",
+    }
+    ```
+* **Response (HTTP 204 No Content - Ejemplo de éxito):**
+    ```json
+    {
+      "Status": 204
+    }
+    ```
+* **Códigos de Error Posibles:**
+    * `400 Bad Request`:
+        * Si `AdminComment` excede el tamaño maximo permitido (2000 careacteres).
+        ```json
+        {
+          "Status" : 400,
+          "Errors": {
+            "AdminComment": "El comentario del administrador supera los 200 caracteres."
+          }
+        }
+        ```
+    * `401 Unauthorized`: Si no se proporciona un token JWT o es inválido.
+    * `403 Forbidden`: Si el usuario no tiene el permiso `reservations.create`.
+    * `500 Internal Server Error`: 
+      * Para errores inesperados.
+        ```json
+        {
+          "Status" : 500,
+          "Title" : "Error inesperado al actualizar la reserva.",
+          "Detail" : "Ocurrió un error inesperado en el servidor."
+        }
+        ```
+---
+### Endpoint: `PUT /api/v1/reservations/transation/id`
+
+* **Descripción:** Permite actualizar el id del pago de una reserva.
+* **Autenticación:** Requiere token JWT válido. Permiso: `reservations.create`.
+* **Parámetros de Consulta (Route Parameters):**
+    * `id` (obligatiro, int): Filtra reserva disponible por identificacion unico.
+```
+PUT /api/v1/reservations/transation/1
+```
+* **Request Body (JSON - Ejemplo):**
+    ```json
+    {
+        "Id" : "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
+        "TrasnsationId" : "f5e4d3c2-b1a0-9876-5432-10fedcba9876",
+        "StatusId" : 1,
+    }
+    ```
+* **Response (HTTP 204 No Content - Ejemplo de éxito):**
+    ```json
+    {
+      "Status": 204
+    }
+    ```
+* **Códigos de Error Posibles:**
+    * `400 Bad Request`:
+        * Si `TrasnsationId` esta vacio.
+        ```json
+        {
+          "Status" : 400,
+          "Errors": {
+            "TrasnsationId": "El id de la transaccion es requerido."
+          }
+        }
+        ```
+    * `401 Unauthorized`: Si no se proporciona un token JWT o es inválido.
+    * `403 Forbidden`: Si el usuario no tiene el permiso `reservations.create`.
+    * `500 Internal Server Error`: 
+      * Para errores inesperados.
+        ```json
+        {
+          "Status" : 500,
+          "Title" : "Error inesperado al actualizar la reserva.",
+          "Detail" : "Ocurrió un error inesperado en el servidor."
+        }
+        ```
+---
+
+### Endpoint: `DELETE /api/v1/reservations/id`
+
+* **Descripción:** Permite eliminar una reserva.
+* **Autenticación:** Requiere token JWT válido. Permiso: `reservations.update`.
 * **Parámetros de Consulta (Route Parameters):**
     * `id` (obligatiro, int): Filtra recurso disponible por identificacion unico.
 ```
-PUT /api/v1/resources/1
+DELETE /api/v1/reservations/1
 ```
 
 * **Response (HTTP 204 No Content - Ejemplo de éxito):**
@@ -289,17 +375,17 @@ PUT /api/v1/resources/1
         {
           "Status" : 400,
           "Title" : "Entrada inválida",
-          "Detail" : "El ID del recurso debe ser valido."
+          "Detail" : "El ID de la reserva debe ser valido."
         }
         ```
     * `401 Unauthorized`: Si no se proporciona un token JWT o es inválido.
-    * `403 Forbidden`: Si el usuario no tiene el permiso `resource.delete`.
+    * `403 Forbidden`: Si el usuario no tiene el permiso `reservations.delete`.
     * `500 Internal Server Error`: 
       * Para errores inesperados.
         ```json
         {
           "Status" : 500,
-          "Title" : "Error inesperado al eliminar el recurso.",
+          "Title" : "Error inesperado al eliminar la reserva.",
           "Detail" : "Ocurrió un error inesperado en el servidor."
         }
         ```
