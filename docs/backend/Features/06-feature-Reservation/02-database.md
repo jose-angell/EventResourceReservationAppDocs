@@ -162,7 +162,7 @@ Documenta las relaciones entre tablas (claves foráneas) y los índices creados 
 
 | Columna | Tipo Tipo / Cardinalidad <br/> (FK/INDEX)	 | 	Columna Destino (si es FK) | Propósito / Justificación |
 |---------|------------------|------------|----------------------|
-|`<Resource>.<CreatedByUserId>` | FK  |User(Id) |Integridad referencial: Asegura que una reserva tenga un responsable. |
-|`<Resource>.<TransactionId>` | FK  |Category(Id) |Integridad referencial: Asegura que una reservacion tenga un pago relacionado. |
-|`<Resource>.<LocationId>` | FK  |Location(Id) |Integridad referencial: Asegura que una reservacion tenga una ubicacion. |
+|`<Reservation>.<CreatedByUserId>` | FK  |User(Id) |Integridad referencial: Asegura que una reserva tenga un responsable. |
+|`<Reservation>.<TransactionId>` | FK  |Category(Id) |Integridad referencial: Asegura que una reservacion tenga un pago relacionado. |
+|`<Reservation>.<LocationId>` | FK  |Location(Id) |Integridad referencial: Asegura que una reservacion tenga una ubicacion. |
 
