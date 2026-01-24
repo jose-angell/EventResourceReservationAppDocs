@@ -16,7 +16,7 @@ Las pruebas unitarias se enfocan en verificar la **lógica de negocio individual
 
 | Clase de Test                         | Componente o Lógica Probada         | Escenarios Clave / Casos de Prueba                         |
 | :------------------------------------ | :---------------------------------- | :--------------------------------------------------------- |
-| `CreateResourceseCaseTests`          | Lógica de creación de Recurso    | - Creación exitosa de una nueva Recurso con datos válidos.       |
+| `CreateResourceCaseTests`          | Lógica de creación de Recurso    | - Creación exitosa de una nueva Recurso con datos válidos.       |
 |                                       |                                     | - Fallo por validación de datos de entrada inválidos (`InvalidInput`).  |
 |                                       |                                     | - Manejo de excepciones de persistencia (`PersistenceException`).  |
 | `UpdateResourceUseCaseTests`          | Lógica de actualización de Recurso | - Actualización exitosa de los datos.|
